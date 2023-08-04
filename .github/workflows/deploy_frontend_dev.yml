@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ${{ secrets.DEV_PATH_TO_DEPLOY }}/frontend
+            cd ${{ secrets.DEV_PATH_TO_DEPLOY }}
             branch=$(git rev-parse --abbrev-ref HEAD)   # chech current branch
             echo "Current branch is $branch"
             if [[ "$branch" != "${{ env.BRANCH }}" ]]; then           
@@ -43,7 +43,7 @@ jobs:
             fi
             git fetch --all
             git reset --hard origin/${{ env.BRANCH }}
-            git pull
+            git pull https://${{ secrets.GIT_USER }}:${{ secrets.GIT_PASSWORD }}@github.com/greenly2020/greenly ${{ env.BRANCH }}
 
       - name: Install deps in server
         uses: appleboy/ssh-action@v0.1.10
