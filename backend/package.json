@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "postinstall": "patch-package"
+  },
+  "devDependencies": {
+    "patch-package": "^7.0.0",
+    "postinstall-postinstall": "^2.1.0"
+  },
+  "dependencies": {
+    "@strapi/plugin-graphql": "4.11.2",
+    "@strapi/plugin-i18n": "4.11.2",
+    "@strapi/plugin-users-permissions": "4.11.2",
+    "@strapi/strapi": "4.11.2",
+    "firebase-admin": "^11.9.0",
+    "pg": "8.8.0",
+    "slug": "^8.2.2",
+    "uuid": "^9.0.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "e931b918-5292-4e8d-99f3-266fdbb59053"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

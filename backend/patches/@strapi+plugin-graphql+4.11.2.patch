@@ -1,0 +1,16 @@
+diff --git a/node_modules/@strapi/plugin-graphql/server/services/internals/types/response-collection-meta.js b/node_modules/@strapi/plugin-graphql/server/services/internals/types/response-collection-meta.js
+index d7310ae..dba44b9 100644
+--- a/node_modules/@strapi/plugin-graphql/server/services/internals/types/response-collection-meta.js
++++ b/node_modules/@strapi/plugin-graphql/server/services/internals/types/response-collection-meta.js
+@@ -26,10 +26,7 @@ module.exports = ({ strapi }) => {
+             const { start, limit } = args;
+             const safeLimit = Math.max(limit, 1);
+ 
+-            const sanitizedQuery = await sanitize.contentAPI.query(args, parent.contentType, {
+-              auth: ctx?.state?.auth,
+-            });
+-            const total = await strapi.entityService.count(resourceUID, sanitizedQuery);
++            const total = await strapi.entityService.count(resourceUID, args);
+             const pageSize = limit === -1 ? total - start : safeLimit;
+             const pageCount = limit === -1 ? safeLimit : Math.ceil(total / safeLimit);
+             const page = limit === -1 ? safeLimit : Math.floor(start / safeLimit) + 1;

@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "abstract": {
+      "type": "text"
+    },
+    "articleBody": {
+      "type": "text"
+    },
+    "category": {
+      "type": "string"
+    },
+    "dateCreated": {
+      "type": "datetime"
+    },
+    "headerImage": {
+      "type": "text"
+    },
+    "readTime": {
+      "type": "integer"
+    },
+    "reviewed": {
+      "type": "boolean"
+    },
+    "views": {
+      "type": "integer"
+    },
+    "likedUsers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "likedArticles"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "authorArticles"
+    },
+    "clappedUsers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "clappedArticles"
+    },
+    "likes": {
+      "type": "integer"
+    },
+    "claps": {
+      "type": "integer"
+    },
+    "oldUserId": {
+      "type": "string"
+    },
+    "oldId": {
+      "type": "integer"
+    },
+    "articleLink": {
+      "type": "text"
+    }
+  }
+}
