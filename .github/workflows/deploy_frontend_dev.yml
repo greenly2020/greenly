@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ${{ secrets.DEV_PATH_TO_DEPLOY }}
+            cd ${{ vars.DEV_PATH_TO_DEPLOY }}
             branch=$(git rev-parse --abbrev-ref HEAD)   # chech current branch
             echo "Current branch is $branch"
             if [[ "$branch" != "${{ env.BRANCH }}" ]]; then           
@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ${{ secrets.DEV_PATH_TO_DEPLOY }}/frontend
+            cd ${{ vars.DEV_PATH_TO_DEPLOY }}/frontend
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             npm install --legacy-peer-deps
@@ -87,9 +87,9 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            if [ -d '${{ secrets.DEV_PATH_TO_DEPLOY }}/frontend/build' ]; then
+            if [ -d '${{ vars.DEV_PATH_TO_DEPLOY }}/frontend/build' ]; then
               echo "Build finded! EXTERMINATE!!!!"
-              rm -rf ${{ secrets.DEV_PATH_TO_DEPLOY }}/frontend/build
+              rm -rf ${{ vars.DEV_PATH_TO_DEPLOY }}/frontend/build
             else
               echo "Build not exist. Continue working"
             fi
@@ -102,7 +102,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           source: '.next,public'
-          target: ${{ secrets.DEV_PATH_TO_DEPLOY }}/frontend
+          target: ${{ vars.DEV_PATH_TO_DEPLOY }}/frontend
 
   restart-pm2-service-shop:
     runs-on: ubuntu-latest
@@ -118,6 +118,6 @@ jobs:
           script: |
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            cd ${{ secrets.DEV_PATH_TO_DEPLOY }}
+            cd ${{ vars.DEV_PATH_TO_DEPLOY }}
             echo "Restart service"
             pm2 restart ecosystem.config.js --only dev.frontend.greenly.co
