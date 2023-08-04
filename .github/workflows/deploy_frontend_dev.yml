@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 env:
   BRANCH: main
-  REACT_APP_ENV: 'production'
+  REACT_APP_ENV: 'prod'
   REACT_APP_DEVELOPMENT_API_URL: ${{ vars.DEV_REACT_APP_DEVELOPMENT_API_URL }}
   REACT_APP_PRODUCTION_API_URL: ${{ vars.DEV_REACT_APP_PRODUCTION_API_URL }}
   BASE_URL: ${{ vars.DEV_BASE_URL }}
