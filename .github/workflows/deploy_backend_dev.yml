@@ -27,7 +27,7 @@ jobs:
             fi
             git fetch --all
             git reset --hard origin/${{ env.BRANCH }}
-            git pull
+            git pull https://VitaliyHula:${{ secrets.GIT_PASSWORD }}@github.com/greenly2020/greenly main
 
       - name: Install deps in dev server
         uses: appleboy/ssh-action@v0.1.10
