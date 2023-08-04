@@ -101,8 +101,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
-          source: '.next,public'
-          target: ${{ vars.DEV_PATH_TO_DEPLOY }}/frontend
+          source: 'frontend/.next,frontend/public'
+          target: ${{ vars.DEV_PATH_TO_DEPLOY }}
 
   restart-pm2-service-shop:
     runs-on: ubuntu-latest
