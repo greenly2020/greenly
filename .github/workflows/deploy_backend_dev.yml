@@ -58,6 +58,14 @@ jobs:
           ls
           npm install
 
+      - name: create-json
+        id: create-json
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: 'greenly-9aa89-af594bbda610.json'
+          json: ${{ secrets.FIREBASE_JSON }}
+          dir: 'backend/'
+
       - name: Run build task
         run: |
           cd backend
