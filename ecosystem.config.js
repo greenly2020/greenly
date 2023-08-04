@@ -16,7 +16,7 @@ module.exports = {
       args: 'start',
       cwd: './frontend',
       env: {
-        NODE_ENV: 'prod',
+        NODE_ENV: 'production',
         PORT: 3000,
       },
     },
