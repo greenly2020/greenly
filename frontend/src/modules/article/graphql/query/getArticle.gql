@@ -1,0 +1,10 @@
+query GetArticle($id: ID) {
+  article(id: $id) {
+    data {
+      id
+      attributes {
+        ...ArticleBody
+      }
+    }
+  }
+}

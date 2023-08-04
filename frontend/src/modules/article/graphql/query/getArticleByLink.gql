@@ -1,0 +1,10 @@
+query GetArticleByLink($articleLink: String!) {
+  articleByLink(articleLink: $articleLink) {
+    data {
+      id
+      attributes {
+        ...ArticleBody
+      }
+    }
+  }
+}

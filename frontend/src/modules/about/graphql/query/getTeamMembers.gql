@@ -1,0 +1,21 @@
+query GetTeamMembers(
+  $filters: UsersPermissionsUserFiltersInput 
+  $pagination: PaginationArg
+  ) {
+    usersPermissionsUsers(filters: $filters, pagination: $pagination,) {
+    data {
+      id
+      attributes {
+        bio
+        name
+        profilePicture
+        extId
+        profileLink
+        displayName
+        }
+      }
+    }
+  }
+
+
+

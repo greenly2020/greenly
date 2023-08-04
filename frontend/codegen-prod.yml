@@ -1,0 +1,26 @@
+overwrite: true
+schema:
+  - http://142.93.58.123:1337/graphql/
+  - 'src/api/store/localSchema.ts'
+documents: ['src/**/*.gql', 'src/**/*.graphql']
+generates:
+  src/__generated__/types.tsx:
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+    plugins:
+      - 'typescript'
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      folder: __generated__
+      extension: .tsx
+      baseTypesPath: __generated__/types.ts
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+        #- eslint --fix
+    plugins:
+      - 'fragment-matcher'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'

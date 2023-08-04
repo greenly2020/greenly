@@ -1,0 +1,7 @@
+mutation DeleteArticle($articleId: ID!) {
+  deleteArticle(id: $articleId) {
+    data {
+      id
+    }
+  }
+}

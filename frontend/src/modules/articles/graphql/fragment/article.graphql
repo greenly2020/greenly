@@ -1,0 +1,23 @@
+fragment Article on Article {
+  myLike
+  myClap
+  title
+  category
+  dateCreated
+  headerImage
+  readTime
+  views
+  author {
+    data {
+      id
+      attributes {
+        name
+        extId
+        profileLink
+      }
+    }
+  }
+  likes
+  claps
+  articleLink
+}

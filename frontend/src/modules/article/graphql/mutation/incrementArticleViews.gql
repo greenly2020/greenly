@@ -1,0 +1,10 @@
+mutation incrementArticleViews($articleId: ID!) {
+  incViews(articleId: $articleId) {
+    data {
+      id
+      attributes {
+        views
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+query MyLikedArticles($pagination: PaginationArg, $sort: [String]) {
+  myLikedArticles(pagination: $pagination, sort: $sort) {
+    data {
+      id
+      attributes {
+        ...Article
+      }
+    }
+    meta {
+      ...Pagination
+    }
+  }
+}

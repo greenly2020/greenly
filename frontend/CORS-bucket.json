@@ -1,0 +1,16 @@
+{
+  "cors": [
+    {
+      "origin": ["http://localhost:3000"],
+      "method": ["*"],
+      "responseHeader": ["Content-Type"],
+      "maxAgeSeconds": 3600
+    },
+    {
+      "origin": ["http://142.93.58.123"],
+      "method": ["*"],
+      "responseHeader": ["Content-Type"],
+      "maxAgeSeconds": 3600
+    }
+  ]
+}

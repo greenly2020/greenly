@@ -1,0 +1,5 @@
+mutation MeUpdate($meData: UsersPermissionsUserInput!) {
+  meUpdate(data: $meData) {
+    ...me
+  }
+}

@@ -1,0 +1,15 @@
+fragment me on UsersPermissionsMe {
+  id
+  bio
+  name
+  email
+  extId
+  blocked
+  confirmed
+  displayName
+  profileLink
+  profilePicture
+  role {
+    name
+  }
+}
