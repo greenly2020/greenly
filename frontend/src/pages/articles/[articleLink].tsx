@@ -4,7 +4,7 @@ import { Article } from '@/modules/article';
 import { MainLayout } from '@/layout/MainLayout';
 import { GetServerSideProps } from 'next';
 import { GetArticleByLinkDocument } from '@/modules/article/graphql/query/__generated__/getArticleByLink';
-import { apolloClientServer } from '@/api/apolloClientServer';
+// import { apolloClientServer } from '@/api/apolloClientServer';
 
 // export const getServerSideProps: GetServerSideProps = async (ctx) => {
 //   const articleLink = ctx?.query?.articleLink as string | undefined;
