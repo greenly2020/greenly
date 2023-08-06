@@ -8,9 +8,10 @@ import { useRouter } from 'next/router';
 export const BrowseCategoryPage = () => {
   const { isReady, push, query } = useRouter();
   const category = query.category as string;
-  const foundCategory = CATEGORIES.find(cat => cat.value === category)
+  // const foundCategory = CATEGORIES.find(cat => cat.value === category)
 
-  if (isReady && !foundCategory) {
+  // if (isReady && !foundCategory) {
+  if (isReady) {
     push('/');
     return null;
   }
@@ -18,9 +19,9 @@ export const BrowseCategoryPage = () => {
   return (
     <>
       <Head>
-        <title>{foundCategory?.label ||'Greenly'}</title>
+        {/* <title>{foundCategory?.label ||'Greenly'}</title> */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={foundCategory?.description}/>
+        {/* <meta name="description" content={foundCategory?.description}/> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout mailForm={false}>

@@ -36,9 +36,9 @@ export const UserPage = () => {
   return (
     <>
       <Head>
-        <title>{user.name || 'Greenly'}</title>
+        {/* <title>{user.name || 'Greenly'}</title> */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={user.bio || ""} />
+        {/* <meta name="description" content={user.bio || ""} /> */}
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
