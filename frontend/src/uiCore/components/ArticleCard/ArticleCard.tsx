@@ -43,7 +43,8 @@ export const ArticleCard = forwardRef<HTMLElement, IArticleCardProps>((props, _)
             <Image
               src={cdnUrl}
               fill={true}
-              sizes="100vw"
+              priority={true}
+              sizes="400px"
               alt={`${cardData?.attributes?.title} header image`}
               style={{ objectFit: 'cover', paddingBottom: '40px', opacity: 0.6 }}
             />
