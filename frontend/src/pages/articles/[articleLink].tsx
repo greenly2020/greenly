@@ -29,13 +29,13 @@ import { apolloClientServer } from '@/api/apolloClientServer';
 // };
 
 // export const ArticlePage = ({ articleData }: any) => {
-export const ArticlePage = ({ articleData }: any) => {
+export const ArticlePage = () => {
   return (
     <>
       <Head>
-        <title>{articleData.articleByLink.data.attributes.title || 'Greenly'}</title>
+        {/* <title>{articleData.articleByLink.data.attributes.title || 'Greenly'}</title> */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={articleData.articleByLink.data.attributes.abstract || ''} />
+        {/* <meta name="description" content={articleData.articleByLink.data.attributes.abstract || ''} /> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout mailForm={false}>
