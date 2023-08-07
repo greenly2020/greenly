@@ -5,8 +5,16 @@ import { Container, LinearProgress, Typography } from '@mui/material';
 import { UserProfile } from '@/modules/user';
 import { MainLayout } from '@/layout/MainLayout';
 import { useProfile } from '@/modules/hooks/useProfile';
+import { GetServerSideProps } from 'next';
+import { apolloClientServer } from '@/api/apolloClientServer';
+import { GetUsersDocument } from '@/modules/user/graphql/query/__generated__/getUsers';
 
-export const UserPage = () => {
+interface userDataProp {
+  name?: string;
+  bio?: string;
+}
+
+export const UserPage = ({ userData }: { userData: userDataProp }) => {
   const { query } = useRouter();
 
   const link = query.profileLink as string;
@@ -36,9 +44,9 @@ export const UserPage = () => {
   return (
     <>
       <Head>
-        {/* <title>{user?.name || 'Greenly'}</title> */}
+        <title>{userData?.name || 'Greenly'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <meta name="description" content={user?.bio || ""} /> */}
+        <meta name="description" content={userData?.bio || ''} />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -50,3 +58,34 @@ export const UserPage = () => {
 };
 
 export default UserPage;
+
+export const getServerSideProps: GetServerSideProps = async ctx => {
+  let parsedProfileData: userDataProp = { name: '', bio: '' };
+  const profileLink = ctx?.query?.profileLink as string | undefined;
+  if (!profileLink) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const { data: profileData } = await apolloClientServer.query({
+    query: GetUsersDocument,
+    variables: {
+      filters: {
+        profileLink: { eq: profileLink },
+      },
+    },
+  });
+
+  parsedProfileData = {
+    name: profileData?.usersPermissionsUsers?.data?.[0]?.attributes?.name,
+    bio: profileData?.usersPermissionsUsers?.data?.[0]?.attributes?.bio,
+  };
+  console.log('debug > parsedProfileData===', parsedProfileData);
+
+  return {
+    props: {
+      userData: parsedProfileData,
+    },
+  };
+};
