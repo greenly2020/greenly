@@ -81,7 +81,6 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
     name: profileData?.usersPermissionsUsers?.data?.[0]?.attributes?.name,
     bio: profileData?.usersPermissionsUsers?.data?.[0]?.attributes?.bio,
   };
-  console.log('debug > parsedProfileData===', parsedProfileData);
 
   return {
     props: {
