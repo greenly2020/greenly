@@ -59,6 +59,7 @@
     "react-modal": "^3.13.1",
     "react-share": "^4.4.1",
     "react-test-renderer": "^17.0.2",
+    "sharp": "^0.32.4",
     "typescript": "5.1.6",
     "ua-parser-js": "^1.0.35"
   },
