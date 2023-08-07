@@ -42,10 +42,10 @@ export const ArticleCard = forwardRef<HTMLElement, IArticleCardProps>((props, _)
           >
             <Image
               src={cdnUrl}
+              alt={`Greenly Article Cover`}
               fill={true}
               priority={true}
               sizes="400px"
-              alt={`${cardData?.attributes?.title} header image`}
               style={{ objectFit: 'cover', paddingBottom: '40px', opacity: 0.6 }}
             />
           </CardMedia>
@@ -81,7 +81,10 @@ export const ArticleCard = forwardRef<HTMLElement, IArticleCardProps>((props, _)
               </Link>
             </Typography>
             <Typography color={theme.palette.white} variant="h5" fontSize="22px" gutterBottom>
-              <Link href={`/articles/${cardData?.attributes?.articleLink}`} style={{ color: 'inherit' }}>
+              <Link
+                href={`/articles/${cardData?.attributes?.articleLink}`}
+                style={{ color: 'inherit', textDecoration: 'none' }}
+              >
                 {cardData?.attributes?.title}
               </Link>
             </Typography>

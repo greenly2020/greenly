@@ -134,7 +134,7 @@ export const ArticleBody = ({ article }: { article: ArticleEntity | null }) => {
             overflowY: 'hidden',
           }}
         >
-          <Image alt="Article Header" fill={true} sizes="100vw" src={url} priority={true} objectFit="cover" />
+          <Image src={url} alt="Article Header" fill={true} sizes="100vw" priority={true} objectFit="cover" />
         </Box>
         <StyledArticleContainer maxWidth="sm">
           <Typography

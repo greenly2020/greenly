@@ -75,10 +75,10 @@ export const AuthorCard = forwardRef<HTMLElement, IAuthorCardProps>((props, ref)
                 >
                   <Image
                     src={cdnUrl ?? ''}
+                    alt={`Author profile picture`}
                     fill={true}
                     priority={true}
                     sizes="90px"
-                    alt={`${data.name} profile picture`}
                     style={{ objectFit: 'cover', borderRadius: '50%' }}
                   />
                 </CardMedia>

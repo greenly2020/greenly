@@ -31,7 +31,7 @@ const LogoContainer = styled('div')(() => ({
 export const GreenlyLogo = () => {
   return (
     <LogoContainer>
-      <Image alt="greenly-logo" fill={true} sizes="200px" src={Logo} priority={true} />
+      <Image src={Logo} alt="greenly-logo" fill={true} sizes="200px" priority={true} />
     </LogoContainer>
   );
 };
