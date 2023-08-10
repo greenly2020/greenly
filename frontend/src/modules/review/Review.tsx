@@ -23,6 +23,7 @@ export default function ReviewQueue() {
       },
       sort: ['dateCreated:DESC'],
     },
+    fetchPolicy: 'network-only',
   });
   const articlesList = articlesData?.articles?.data;
 

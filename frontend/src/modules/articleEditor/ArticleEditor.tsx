@@ -155,29 +155,12 @@ function ArticleEditor() {
     });
   };
 
-  const submit = async () => {
-    let imageUrl = headerURL;
+  const submit = () => {
     if (initAbstractUrl.length) {
       deleteOldArticleImages(initAbstractUrl);
     }
     if (initBodyUrl.length) {
       deleteOldArticleImages(initBodyUrl, true);
-    }
-
-    if (headerURL.includes('greenly-b5548')) {
-      const oldImageUrl = 'https://greenly.b-cdn.net' + headerURL.split('appspot.com')[1];
-      console.log('debug > oldImageUrl===', oldImageUrl);
-      try {
-        const blob = await fetch(oldImageUrl).then(r => r.blob());
-        if (blob) {
-          const imagePath = `Images/Article/${articleAuthor}/${Date.now()}`;
-          const articleImagesRef = ref(storage, imagePath);
-          await uploadFile(articleImagesRef, blob);
-          imageUrl = await getFileUrl(articleImagesRef);
-        }
-      } catch (err) {
-        console.log('[ERROR: error updating image]', err);
-      }
     }
 
     const articleData = {
@@ -186,7 +169,7 @@ function ArticleEditor() {
       articleBody: JSON.stringify(convertToRaw(editorStateBody.getCurrentContent())),
       category,
       dateCreated,
-      headerImage: imageExists(imageUrl),
+      headerImage: imageExists(headerURL),
       readTime,
       reviewed: false,
       author: articleAuthor,
