@@ -24,10 +24,9 @@ export const getCDNUrl = (storageUrl: string, width: number, height: number) => 
   if (storageUrl.includes('picsum')) {
     return storageUrl;
   }
-  // TODO remove greenly.b-cdn.net after migration to greenly-co.b-cdn.net
-  return storageUrl.includes('greenly-b5548')
-    ? 'https://greenly.b-cdn.net' + storageUrl.split('appspot.com')[1] + `?w=${width}&h=${height}&optimizer=image`
-    : 'https://greenly-co.b-cdn.net' + storageUrl.split('appspot.com')[1] + `?w=${width}&h=${height}&optimizer=image`;
+  return (
+    'https://greenly-co.b-cdn.net' + storageUrl.split('appspot.com')[1] + `?w=${width}&h=${height}&optimizer=image`
+  );
 };
 
 export const imageExists = (url: string) => {

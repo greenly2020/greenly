@@ -17,12 +17,6 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
-      // TODO remove greenly.b-cdn.net when articles and users updated
-      {
-        protocol: 'https',
-        hostname: 'greenly.b-cdn.net',
-        pathname: '/**',
-      },
       {
         protocol: 'https',
         hostname: 'greenly-co.b-cdn.net',
