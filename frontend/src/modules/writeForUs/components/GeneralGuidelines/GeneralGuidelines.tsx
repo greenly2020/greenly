@@ -20,7 +20,7 @@ const GUIDELINES: IGuideline[][] = [
   [
     {
       title: 'Craft a Unique Piece',
-      body: 'Before you put pen to paper, you should ask yourself: ‘has this been written before?’ If the answer is yes, please consider finding a new topic or a new perspective on your desired topic. We are looking for articles that offer fresh and unique perspectives. ',
+      body: `Before you put pen to paper, you should ask yourself: 'has this been written before?' If the answer is yes, please consider finding a new topic or a new perspective on your desired topic. We are looking for articles that offer fresh and unique perspectives. For SEO purposes, we only publish articles that have not been previously published.`,
     },
     {
       title: "Don't rely solely on AI",
@@ -58,10 +58,6 @@ const GUIDELINES: IGuideline[][] = [
     },
   ],
   [
-    {
-      title: "Be Transparent About Your Article's Origins",
-      body: 'We welcome writing that has already been published elsewhere. That said, we want readers to be informed about these article’s origins. If your work has appeared on other platforms, please be transparent and note this at the bottom of your publication when you submit.',
-    },
     {
       title: 'Add Keywords',
       body: 'If you want your story to go viral, there are steps you can take to set yourself up for success. You should try to weave in keywords that will make your article rank higher in search results. Some of the keywords you can use include: ',

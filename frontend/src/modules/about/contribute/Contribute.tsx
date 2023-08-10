@@ -28,7 +28,7 @@ export const Contribute = () => {
         <Grid container justifyContent="center">
           <Grid item xs={12}>
             <Typography variant="h1" className={'headerText'} align="center">
-              Write For US!
+              Write For Us!
             </Typography>
             <Typography variant="h5" className={'bodyText'} align="center">
               Got something to share?
