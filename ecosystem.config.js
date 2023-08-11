@@ -6,7 +6,7 @@ module.exports = {
       args: 'start',
       cwd: './backend',
       env: {
-        NODE_ENV: 'production',
+        NODE_ENV: 'development',
         PORT: 1337,
       },
     },
