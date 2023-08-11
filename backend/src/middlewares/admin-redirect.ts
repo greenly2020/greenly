@@ -2,7 +2,7 @@ export default (_config, { strapi }) => {
   const redirects = ['/', '/index.html'].map(path => ({
     method: 'GET',
     path,
-    handler: ctx => ctx.redirect('/admin'),
+    handler: ctx => ctx.redirect('api/admin'),
     config: { auth: false },
   }));
 
