@@ -13,15 +13,15 @@ import { auth } from '@/modules/firebase/firebaseSetup';
 import { renewToken } from '@/config/renewToken';
 import { LOCAL_SCHEMA } from './store/localSchema';
 
-export const getApolloUri = () => {
-  if (process.env.REACT_APP_ENV === 'development') {
-    return process.env.REACT_APP_DEVELOPMENT_API_URL || '';
-  } else if (process.env.REACT_APP_ENV === 'production') {
-    return process.env.REACT_APP_PRODUCTION_API_URL || '';
-  } else {
-    throw new Error('No environment specified');
-  }
-};
+// export const getApolloUri = () => {
+//   if (process.env.REACT_APP_ENV === 'development') {
+//     return process.env.REACT_APP_DEVELOPMENT_API_URL || '';
+//   } else if (process.env.REACT_APP_ENV === 'production') {
+//     return process.env.REACT_APP_PRODUCTION_API_URL || '';
+//   } else {
+//     throw new Error('No environment specified');
+//   }
+// };
 
 export const JWT_KEY = 'jwt';
 
