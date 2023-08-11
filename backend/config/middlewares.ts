@@ -16,5 +16,6 @@ export default [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+  { resolve: './src/middlewares/admin-redirect' },
 ];
 //
