@@ -74,7 +74,7 @@ export const AuthorCard = forwardRef<HTMLElement, IAuthorCardProps>((props, ref)
                   }}
                 >
                   <Image
-                    src={cdnUrl ?? ''}
+                    src={data.profilePicture ?? 'https://picsum.photos/id/11/90/90'}
                     alt={`Author profile picture`}
                     fill={true}
                     priority={true}

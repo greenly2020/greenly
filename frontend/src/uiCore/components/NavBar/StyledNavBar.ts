@@ -37,7 +37,7 @@ export const StyledNavBar = styled('div')(() => ({
   },
   '& .submitButtonText': {
     marginRight: '10px',
-    padding: '2px 5px 2px 5px',
+    padding: '5px 10px 5px 10px',
     border: '2px solid',
     borderRadius: '5px',
   },

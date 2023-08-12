@@ -8,7 +8,7 @@ export const ArticlesPage = () => {
   return (
     <>
       <Head>
-        <title>Greenly Articles</title>
+        <title>Greenly</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Front page of the green revolution" />
         <link rel="icon" href="/favicon.ico" />
