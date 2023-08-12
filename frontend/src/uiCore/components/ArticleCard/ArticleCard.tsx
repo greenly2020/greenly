@@ -42,7 +42,7 @@ export const ArticleCard = forwardRef<HTMLElement, IArticleCardProps>((props, _)
           >
             <Image
               src={cdnUrl}
-              alt={`Greenly Article Cover`}
+              alt={`Article Cover`}
               fill={true}
               priority={true}
               sizes="400px"
