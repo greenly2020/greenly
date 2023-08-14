@@ -40,13 +40,13 @@ export const ArticleCard = forwardRef<HTMLElement, IArticleCardProps>((props, _)
               background: 'linear-gradient(to right bottom, #430089, #82ffa1)',
             }}
           >
-            {/* <Image
+            <Image
               src={cdnUrl}
+              alt={`Article Cover`}
               fill={true}
               sizes="100vw"
-              alt={`${cardData?.attributes?.title} header image`}
               style={{ objectFit: 'cover', paddingBottom: '40px', opacity: 0.6 }}
-            /> */}
+            />
           </CardMedia>
         </Link>
         <CardContent

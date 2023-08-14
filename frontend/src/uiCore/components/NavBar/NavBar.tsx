@@ -149,7 +149,7 @@ export const NavBar = () => {
             <Box className={'rightContainer'}>
               {router.pathname !== '/submit' && (
                 <Link href={me?.id ? '/submit' : '/auth'} className={'submitButtonLink'}>
-                  <Typography variant="body2" className={'submitButtonText'}>
+                  <Typography variant="body2" fontSize="20px" className={'submitButtonText'}>
                     Submit
                   </Typography>
                 </Link>

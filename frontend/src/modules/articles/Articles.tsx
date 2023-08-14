@@ -27,6 +27,7 @@ export default function Articles() {
         reviewed: { eq: true },
       },
     },
+    fetchPolicy: 'cache-and-network',
   });
   const articlesList = articlesData?.articles?.data;
 

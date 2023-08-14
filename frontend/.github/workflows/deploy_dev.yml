@@ -4,15 +4,11 @@ on: workflow_dispatch
 
 env:
   BRANCH: dev
-  REACT_APP_ENV: 'production'
-  REACT_APP_DEVELOPMENT_API_URL: ${{ vars.DEV_REACT_APP_DEVELOPMENT_API_URL }}
-  REACT_APP_PRODUCTION_API_URL: ${{ vars.DEV_REACT_APP_PRODUCTION_API_URL }}
   BASE_URL: ${{ vars.DEV_BASE_URL }}
-  BASE_API_URL: ${{ vars.DEV_BASE_API_URL }}
   GRAPHQL_API: ${{ vars.DEV_GRAPHQL_API }}
   NEXTAUTH_URL: ${{ vars.DEV_NEXTAUTH_URL }}
-
   NEXTAUTH_SECRET: ${{ secrets.DEV_NEXTAUTH_SECRET }}
+
   NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.DEV_NEXT_PUBLIC_FIREBASE_API_KEY }}
   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.DEV_NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}
   NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.DEV_NEXT_PUBLIC_FIREBASE_PROJECT_ID }}
@@ -20,8 +16,6 @@ env:
   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.DEV_NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
   NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.DEV_NEXT_PUBLIC_FIREBASE_APP_ID }}
   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: ${{ secrets.DEV_NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID }}
-  NEXT_PUBLIC_FIREBASE_CLIENT_EMAIL: ${{ secrets.DEV_NEXT_PUBLIC_FIREBASE_CLIENT_EMAIL }}
-  NEXT_PUBLIC_FIREBASE_PRIVATE_KEY: ${{ secrets.DEV_NEXT_PUBLIC_FIREBASE_PRIVATE_KEY }}
 
 jobs:
   update-server:
@@ -38,7 +32,7 @@ jobs:
             cd ${{ secrets.DEV_PATH_TO_DEPLOY }}
             branch=$(git rev-parse --abbrev-ref HEAD)   # chech current branch
             echo "Current branch is $branch"
-            if [[ "$branch" != "${{ env.BRANCH }}" ]]; then           
+            if [[ "$branch" != "${{ env.BRANCH }}" ]]; then
               git checkout ${{ env.BRANCH }}
             fi
             git fetch --all

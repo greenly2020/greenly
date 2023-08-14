@@ -1,6 +1,6 @@
 overwrite: true
 schema:
-  - http://142.93.58.123:1337/graphql/
+  - http://142.93.58.123/api/graphql/
   - 'src/api/store/localSchema.ts'
 documents: ['src/**/*.gql', 'src/**/*.graphql']
 generates:

@@ -3,10 +3,10 @@ const nextConfig = {
   // reactStrictMode: true,
   env: {
     BASE_URL: process.env.BASE_URL,
-    BASE_API_URL: process.env.BASE_API_URL,
     GRAPHQL_API: process.env.GRAPHQL_API,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+
     NEXT_PUBLIC_FIREBASE_API_KEY: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
     NEXT_PUBLIC_FIREBASE_PROJECT_ID: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
@@ -19,12 +19,6 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
-      // TODO remove greenly.b-cdn.net when articles and users updated
-      {
-        protocol: 'https',
-        hostname: 'greenly.b-cdn.net',
-        pathname: '/**',
-      },
       {
         protocol: 'https',
         hostname: 'greenly-co.b-cdn.net',
@@ -48,6 +42,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'googleapis.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
         pathname: '/**',
       },
     ],
