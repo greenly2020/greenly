@@ -15,8 +15,7 @@ const Article = () => {
     variables: {
       articleLink,
     },
-    fetchPolicy: 'cache-first',
-    nextFetchPolicy: 'cache-only',
+    fetchPolicy: 'cache-and-network',
   });
   const articleData = data?.articleByLink?.data;
 

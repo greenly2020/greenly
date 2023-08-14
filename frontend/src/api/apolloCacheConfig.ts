@@ -5,9 +5,9 @@ export const apolloCache = new InMemoryCache({
   typePolicies: {
     Query: {
       fields: {
-        // myCars: {
-        //   read() {
-        //     return globalState.myCars();
+        // articleByLink: {
+        //   merge(existing = {}, incoming: any) {
+        //     return { ...existing, ...incoming };
         //   },
         // },
       },
