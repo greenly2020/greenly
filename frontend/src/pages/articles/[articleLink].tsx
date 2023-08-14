@@ -32,7 +32,10 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
         .join(' '),
     };
   }
-  parsedArticleData = { ...parsedArticleData, title: articleData?.articleByLink?.data?.attributes?.title };
+  parsedArticleData = articleData?.articleByLink?.data && {
+    ...parsedArticleData,
+    title: articleData?.articleByLink?.data?.attributes?.title,
+  };
   return {
     props: {
       articleData: parsedArticleData,

@@ -63,15 +63,13 @@ export default function Articles() {
   if (articlesLoading) {
     return <LinearProgress color="secondary" />;
   }
-
-  return (
+  return articles ? (
     <StyledArticlesContainer>
       <Container maxWidth="xl">
         <Box pb={3}>
           {articles?.length === 0 && (
             <Typography variant={'h3'} className={'errorText'}>
-              {' '}
-              There are no articles here, try an earlier page!{' '}
+              There are no articles here, try an earlier page!
             </Typography>
           )}
           <Grid container spacing={3}>
@@ -83,5 +81,5 @@ export default function Articles() {
         </div>
       </Container>
     </StyledArticlesContainer>
-  );
+  ) : null;
 }

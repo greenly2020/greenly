@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import { Box, Container, LinearProgress, Typography } from '@mui/material';
 
 import { theme } from '@/styles/theme';
-import { InProgress } from '@/uiCore/components/InProgress';
 import { ArticleBody } from '@/uiCore/components/ArticleBody';
 import { ArticleFooter } from '@/uiCore/components/ArticleFooter';
 import { useGetArticleByLinkQuery } from './graphql/query/__generated__/getArticleByLink';
@@ -19,16 +18,23 @@ const Article = () => {
   });
   const articleData = data?.articleByLink?.data;
 
-  if (!articleData || loading) {
+  if (loading) {
     return (
       <div data-testid="article-loading">
         <LinearProgress color="secondary" />
       </div>
     );
   }
-  if (error) {
-    return <InProgress variant="primary" />;
+  if (error || !articleData) {
+    return (
+      <Box p={3}>
+        <Typography variant="h3" pt="50px" mt="-20px" mb="50px">
+          There are no articles here, try an earlier page!
+        </Typography>
+      </Box>
+    );
   }
+
   return articleData ? (
     <Box data-testid="article-container" bgcolor={theme.palette.gray.background}>
       <ArticleBody article={articleData} />
