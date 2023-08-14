@@ -1,7 +1,6 @@
-import { forwardRef } from 'react';
-import { Grid, Container, Card, CardMedia, CardContent, Typography } from '@mui/material';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Grid, Container, Card, CardMedia, CardContent, Typography } from '@mui/material';
 
 import dateCalculator from '../../../utils/dateCalculator/dateCalculator';
 import { ArticleEntity } from '@/__generated__/types';
@@ -10,13 +9,9 @@ import { LikeButton } from '../LikeButton';
 import { theme } from '@/styles/theme';
 import ShareButton from '../ShareButton/ShareButton';
 
-export interface IArticleCardProps {
-  cardData: ArticleEntity;
-}
+export interface IArticleCardProps {}
 
-export const ArticleCard = forwardRef<HTMLElement, IArticleCardProps>((props, _) => {
-  const { cardData } = props;
-
+export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
   if (!cardData) {
     return null;
   }
@@ -129,5 +124,4 @@ export const ArticleCard = forwardRef<HTMLElement, IArticleCardProps>((props, _)
       </Card>
     </Grid>
   );
-});
-ArticleCard.displayName = 'ArticleCard';
+};
