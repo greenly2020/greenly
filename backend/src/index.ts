@@ -7,6 +7,7 @@ import { disableGraphQLFields } from './utils/disableGraphQLFields';
 import { meUpdate } from './extensions/meUpdate';
 import { article } from './extensions/article';
 import { addIndexByArticleLink } from './extensions/article/addIndexByArticleLink';
+import { user } from './extensions/users-permissions/user';
 
 export default {
   register(/*{ strapi }*/) {
@@ -20,6 +21,7 @@ export default {
     extensionService.use(loginByToken);
     extensionService.use(meUpdate);
     extensionService.use(article);
+    extensionService.use(user);
   },
 
   async bootstrap(/*{ strapi }*/) {

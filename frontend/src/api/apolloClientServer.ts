@@ -1,3 +1,3 @@
-// import { createApolloClient } from "./apolloClient";
+import { createApolloClient } from './apolloClient';
 
-// export const apolloClientServer = createApolloClient({ ssrMode: "true" });
+export const apolloClientServer = createApolloClient({ ssrMode: 'true' });

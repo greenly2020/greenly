@@ -7,11 +7,7 @@ import { ArticleCard } from '@/uiCore/components/ArticleCard/index';
 import { theme } from '@/styles/theme';
 
 export default function TopArticles() {
-  const {
-    data: articlesData,
-    loading: articlesLoading,
-    error: articlesError,
-  } = useGetArticlesListQuery({
+  const { data: articlesData, error: articlesError } = useGetArticlesListQuery({
     variables: {
       pagination: {
         limit: 6,
@@ -31,15 +27,12 @@ export default function TopArticles() {
       </Container>
     );
   }
-  if (articlesLoading) {
-    return <LinearProgress color="secondary" />;
-  }
 
   const articles = articlesList?.map((article: ArticleEntity) => {
     return <ArticleCard key={article?.id ? article.id : Math.random().toString()} cardData={article} />;
   });
 
-  return (
+  return articles ? (
     <Box bgcolor={theme.palette.white}>
       <Typography
         variant="h4"
@@ -59,5 +52,5 @@ export default function TopArticles() {
         </Box>
       </Container>
     </Box>
-  );
+  ) : null;
 }

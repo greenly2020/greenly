@@ -4,38 +4,52 @@ import { Article } from '@/modules/article';
 import { MainLayout } from '@/layout/MainLayout';
 import { GetServerSideProps } from 'next';
 import { GetArticleByLinkDocument } from '@/modules/article/graphql/query/__generated__/getArticleByLink';
-// import { apolloClientServer } from '@/api/apolloClientServer';
+import { apolloClientServer } from '@/api/apolloClientServer';
 
-// export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//   const articleLink = ctx?.query?.articleLink as string | undefined;
-//   if (!articleLink) {
-//     return {
-//       notFound: true,
-//     };
-//   }
+export const getServerSideProps: GetServerSideProps = async ctx => {
+  let parsedArticleData = { title: '', abstract: '' };
+  const articleLink = ctx?.query?.articleLink as string | undefined;
+  if (!articleLink) {
+    return {
+      notFound: true,
+    };
+  }
 
-//   const { data: articleData } = await apolloClientServer.query({
-//     query: GetArticleByLinkDocument,
-//     variables: {
-//       articleLink,
-//     },
-//   });
+  const { data: articleData } = await apolloClientServer.query({
+    query: GetArticleByLinkDocument,
+    variables: {
+      articleLink,
+    },
+  });
 
-//   return {
-//     props: {
-//       articleData,
-//     },
-//   };
-// };
+  const abstract: string = articleData?.articleByLink?.data?.attributes?.abstract as string;
 
-// export const ArticlePage = ({ articleData }: any) => {
-export const ArticlePage = () => {
+  if (typeof abstract === 'string' && JSON.parse(abstract).blocks[0].text !== '') {
+    parsedArticleData = {
+      ...parsedArticleData,
+      abstract: JSON.parse(abstract)
+        ?.blocks?.map(({ text }: { text: string }) => text)
+        .join(' '),
+    };
+  }
+  parsedArticleData = articleData?.articleByLink?.data && {
+    ...parsedArticleData,
+    title: articleData?.articleByLink?.data?.attributes?.title,
+  };
+  return {
+    props: {
+      articleData: parsedArticleData,
+    },
+  };
+};
+
+export const ArticlePage = ({ articleData }: any) => {
   return (
     <>
       <Head>
-        {/* <title>{articleData.articleByLink.data.attributes.title || 'Greenly'}</title> */}
+        <title>{articleData?.title || 'Greenly'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <meta name="description" content={articleData.articleByLink.data.attributes.abstract || ''} /> */}
+        <meta name="description" content={articleData?.abstract || ''} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout mailForm={false}>
