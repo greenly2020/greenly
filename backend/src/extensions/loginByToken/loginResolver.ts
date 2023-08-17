@@ -5,6 +5,7 @@ import { getApplicationError, getTokenExpiredError, getUnauthorizedError } from 
 import { Args } from './types';
 import { UID } from '../../types';
 import { verifyTokenAndDecodeToken } from '../../service';
+import { lowerCaseAndTrim } from '../../utils/sanitizers';
 
 export const loginResolver = async (parent, args: Args, context) => {
   try {
@@ -20,21 +21,25 @@ export const loginResolver = async (parent, args: Args, context) => {
       throw getUnauthorizedError();
     }
 
+    const userData = await getAuth().getUser(decodedToken.uid);
+
     let user = await strapi.db.query(UID.USER).findOne({
       where: {
         extId: decodedToken.uid,
       },
-      select: ['id'],
+      select: ['id', 'countLogin'],
     });
 
     if (!user) {
       user = await strapi.db.query(UID.USER).findOne({
         where: {
-          email: `###old###_${decodedToken.email}`,
+          email: userData.email,
         },
-        select: ['id'],
+        select: ['id', 'countLogin'],
       });
     }
+
+    const email = lowerCaseAndTrim(userData.email);
 
     if (!user) {
       const pluginStore = await strapi.store({ type: 'plugin', name: 'users-permissions' });
@@ -42,8 +47,8 @@ export const loginResolver = async (parent, args: Args, context) => {
       const basicRole = await strapi.db.query(UID.ROLE).findOne({ where: { type: settings.default_role } });
 
       let profileLink;
-      if (decodedToken.name) {
-        profileLink = slug(decodedToken.name);
+      if (userData.displayName) {
+        profileLink = slug(userData.displayName);
         const countUserWithProfileLink = await strapi.db.query(UID.USER).count({
           where: {
             profileLink,
@@ -57,22 +62,25 @@ export const loginResolver = async (parent, args: Args, context) => {
         profileLink = decodedToken.uid;
       }
 
+      profileLink = lowerCaseAndTrim(profileLink);
+
       user = await strapi.db.query(UID.USER).create({
         data: {
           blocked: false,
           role: basicRole.id,
           bio: 'Greenly User',
           extId: decodedToken.uid,
-          email: decodedToken.email,
+          email,
           username: decodedToken.uid,
           displayName:
-            typeof decodedToken.name === 'string'
-              ? decodedToken.name.replaceAll(' ', '').toLowerCase()
+            typeof userData.displayName === 'string'
+              ? userData.displayName.replaceAll(' ', '').toLowerCase()
               : decodedToken.uid,
           profileLink,
-          name: decodedToken.name || '',
+          name: userData.displayName || '',
           confirmed: decodedToken.email_verified,
           profilePicture: decodedToken.picture,
+          countLogin: 0,
         },
       });
     } else {
@@ -83,7 +91,8 @@ export const loginResolver = async (parent, args: Args, context) => {
         data: {
           extId: decodedToken.uid,
           confirmed: decodedToken.email_verified,
-          email: decodedToken.email,
+          email,
+          countLogin: (user.countLogin ?? 0) + 1,
         },
       });
     }

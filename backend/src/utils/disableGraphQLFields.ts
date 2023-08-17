@@ -14,10 +14,9 @@ enum DisableActionType {
 
 const disableFields = {
   [UID.USER]: {
-    disableActions: [DisableActionType.update, DisableActionType.delete, DisableActionType.create],
+    disableActions: [DisableActionType.delete],
     disableFields: {
       role: [DisableFieldType.output, DisableFieldType.input],
-      email: [DisableFieldType.output, DisableFieldType.input],
       blocked: [DisableFieldType.output, DisableFieldType.input],
       username: [DisableFieldType.output, DisableFieldType.input],
       password: [DisableFieldType.output, DisableFieldType.input],

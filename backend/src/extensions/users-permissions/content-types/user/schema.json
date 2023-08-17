@@ -17,13 +17,14 @@
       "minLength": 3,
       "unique": true,
       "configurable": false,
-      "required": true
+      "required": false
     },
     "email": {
       "type": "email",
       "minLength": 6,
+      "unique": true,
       "configurable": false,
-      "required": true
+      "required": false
     },
     "provider": {
       "type": "string",
@@ -103,6 +104,10 @@
     },
     "displayName": {
       "type": "string"
+    },
+    "countLogin": {
+      "type": "integer",
+      "private": true
     }
   }
 }
