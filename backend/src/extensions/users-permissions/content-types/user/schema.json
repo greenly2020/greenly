@@ -106,8 +106,7 @@
       "type": "string"
     },
     "countLogin": {
-      "type": "integer",
-      "private": true
+      "type": "integer"
     }
   }
 }
