@@ -30,16 +30,16 @@ export const loginResolver = async (parent, args: Args, context) => {
       select: ['id', 'countLogin'],
     });
 
+    const email = lowerCaseAndTrim(userData.email);
+
     if (!user) {
       user = await strapi.db.query(UID.USER).findOne({
         where: {
-          email: userData.email,
+          email,
         },
         select: ['id', 'countLogin'],
       });
     }
-
-    const email = lowerCaseAndTrim(userData.email);
 
     if (!user) {
       const pluginStore = await strapi.store({ type: 'plugin', name: 'users-permissions' });
