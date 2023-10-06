@@ -1,6 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Grid, Container, Card, CardMedia, CardContent, Typography } from '@mui/material';
+import {
+  Grid,
+  Container,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+} from '@mui/material';
 
 import dateCalculator from '../../../utils/dateCalculator/dateCalculator';
 import { ArticleEntity } from '@/__generated__/types';
@@ -17,16 +24,28 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
   }
 
   const cdnUrl =
-    cardData?.attributes?.headerImage && cardData?.attributes?.headerImage.includes('appspot.com')
+    cardData?.attributes?.headerImage &&
+    cardData?.attributes?.headerImage.includes('appspot.com')
       ? getCDNUrl(cardData?.attributes?.headerImage, 400, 225)
       : cardData?.attributes?.headerImage
       ? cardData?.attributes?.headerImage
       : 'https://picsum.photos/id/11/400/225';
 
   return (
-    <Grid item xs={12} sm={6} md={6} lg={4} key={cardData?.id} data-testid={`articleCard-${cardData.id}`}>
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={6}
+      lg={4}
+      key={cardData?.id}
+      data-testid={`articleCard-${cardData.id}`}
+    >
       <Card elevation={4} sx={{ position: 'relative', borderRadius: '10px' }}>
-        <Link color="inherit" href={`/articles/${cardData.attributes?.articleLink}`}>
+        <Link
+          color="inherit"
+          href={`/articles/${cardData.attributes?.articleLink}`}
+        >
           <CardMedia
             sx={{
               opacity: 1,
@@ -40,7 +59,11 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               alt={`Article Cover`}
               fill={true}
               sizes="100vw"
-              style={{ objectFit: 'cover', paddingBottom: '40px', opacity: 0.6 }}
+              style={{
+                objectFit: 'cover',
+                paddingBottom: '40px',
+                opacity: 0.6,
+              }}
             />
           </CardMedia>
         </Link>
@@ -55,7 +78,13 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
             textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
           }}
         >
-          <Container sx={{ paddingLeft: '12px', paddingRight: '24px', textAlign: 'left' }}>
+          <Container
+            sx={{
+              paddingLeft: '12px',
+              paddingRight: '24px',
+              textAlign: 'left',
+            }}
+          >
             <Typography
               variant="caption"
               fontSize="16px"
@@ -65,7 +94,9 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               color={theme.palette.white}
             >
               <Link
-                href={`/user/${String(cardData?.attributes?.author?.data?.attributes?.profileLink)}`}
+                href={`/user/${String(
+                  cardData?.attributes?.author?.data?.attributes?.profileLink
+                )}`}
                 style={{
                   textDecoration: 'none',
                   color: 'inherit',
@@ -74,8 +105,16 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
                 {cardData?.attributes?.author?.data?.attributes?.name}
               </Link>
             </Typography>
-            <Typography color={theme.palette.white} variant="h5" fontSize="22px" gutterBottom>
-              <Link href={`/articles/${cardData?.attributes?.articleLink}`} style={{ color: 'inherit' }}>
+            <Typography
+              color={theme.palette.white}
+              variant="h5"
+              fontSize="22px"
+              gutterBottom
+            >
+              <Link
+                href={`/articles/${cardData?.attributes?.articleLink}`}
+                style={{ color: 'inherit' }}
+              >
                 {cardData?.attributes?.title}
               </Link>
             </Typography>
@@ -92,29 +131,44 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
           bottom={0}
         >
           <Grid item xs={4} pb="5px">
-            <Link color="inherit" href={`/browse/${String(cardData?.attributes?.category)}`}>
+            <Link
+              color="inherit"
+              href={`/browse/${String(cardData?.attributes?.category)}`}
+            >
               <Typography
                 variant="caption"
                 color={theme.palette.green.category}
                 fontWeight={theme.typography.fontWeightBold}
               >
-                {(cardData?.attributes?.category?.charAt(0)?.toUpperCase() ?? '') +
-                  (cardData?.attributes?.category?.slice(1) ?? '')}
+                {(cardData?.attributes?.category?.charAt(0)?.toUpperCase() ??
+                  '') + (cardData?.attributes?.category?.slice(1) ?? '')}
               </Typography>
             </Link>
           </Grid>
 
           <Grid item xs={6}>
-            <Typography ml="6px" fontSize="12px" variant="body2" color="textSecondary" noWrap>
-              {dateCalculator(cardData?.attributes?.dateCreated)} &middot; {cardData?.attributes?.readTime} min read
+            <Typography
+              ml="6px"
+              fontSize="12px"
+              variant="body2"
+              color="textSecondary"
+              noWrap
+            >
+              {cardData?.attributes?.readTime} min read
             </Typography>
           </Grid>
           <Grid item xs={1}>
-            <ShareButton url={`${cardData?.attributes?.articleLink}`} title={'Share article'} />
+            <ShareButton
+              url={`${cardData?.attributes?.articleLink}`}
+              title={'Share article'}
+            />
           </Grid>
 
           <Grid item xs={1}>
-            <LikeButton liked={cardData?.attributes?.myLike || false} articleId={String(cardData?.id)} />
+            <LikeButton
+              liked={cardData?.attributes?.myLike || false}
+              articleId={String(cardData?.id)}
+            />
           </Grid>
         </Grid>
       </Card>
