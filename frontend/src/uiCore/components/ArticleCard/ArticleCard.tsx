@@ -131,7 +131,7 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
           position="absolute"
           bottom={0}
         >
-          <Grid item xs={4} pb="5px">
+          <Grid item xs={10} pb="5px">
             <Link
               color="inherit"
               href={`/browse/${String(cardData?.attributes?.category)}`}
@@ -147,17 +147,6 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
             </Link>
           </Grid>
 
-          <Grid item xs={6}>
-            <Typography
-              ml="6px"
-              fontSize="12px"
-              variant="body2"
-              color="textSecondary"
-              noWrap
-            >
-              {cardData?.attributes?.readTime} min read
-            </Typography>
-          </Grid>
           <Grid item xs={1}>
             <ShareButton
               url={`${cardData?.attributes?.articleLink}`}
