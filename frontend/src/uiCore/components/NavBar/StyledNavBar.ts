@@ -57,11 +57,4 @@ export const StyledNavBar = styled('div')(() => ({
     color: theme.palette.gray.primary,
     margin: 'auto 10px auto 10px',
   },
-  '& .mobileVisible': {
-    display: 'none',
-
-    [theme.breakpoints.down('sm')]: {
-      display: 'block',
-    },
-  },
 }));

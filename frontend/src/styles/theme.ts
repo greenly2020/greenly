@@ -1,9 +1,16 @@
-import { Nunito_Sans, Nunito } from 'next/font/google';
+import { Nunito_Sans, Nunito, Inter } from 'next/font/google';
 import { Theme, createTheme } from '@mui/material';
 
 export const nunito = Nunito({
   weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+export const inter = Inter({
+  weight: ['400', '500', '600', '700'],
+  style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
 });
@@ -30,6 +37,9 @@ declare module '@mui/material/styles' {
     dark: string;
     background: string;
     divider: string;
+    backgroundSecondary: string;
+    grayLight: string;
+    grayLightSecondary: string;
   }
   interface Palette {
     green: GreenPalette;
@@ -50,7 +60,10 @@ enum Colors {
   GRAY_PRIMARY = '#838383',
   GRAY_SECONDARY = '#B6B6B6',
   GRAY_DARK = '#4F4F4F',
+  GRAY_LIGHT = '#6D6D6D',
+  GRAY_LIGHT_SECONDARY = '#C3C3C3',
   GRAY_BACKGROUND = '#EEEEEE',
+  GRAY_BACKGROUND_SECONDARY = '#F2F2F2',
   GRAY_DIVIDER = '#E9E9E9',
   GREEN_PRIMARY = '#004621',
   GREEN_SECONDARY = '#008940',
@@ -89,6 +102,9 @@ export const theme: Theme = createTheme({
       dark: Colors.GRAY_DARK,
       background: Colors.GRAY_BACKGROUND,
       divider: Colors.GRAY_DIVIDER,
+      backgroundSecondary: Colors.GRAY_BACKGROUND_SECONDARY,
+      grayLight: Colors.GRAY_LIGHT,
+      grayLightSecondary: Colors.GRAY_LIGHT_SECONDARY,
     },
     white: Colors.WHITE,
   },
@@ -99,6 +115,7 @@ export const theme: Theme = createTheme({
       // 'Helvetica Neue',
       // 'Helvetica',
       // 'Arial',
+      'Inter',
       'sans-serif',
     ].join(','),
     fontWeightRegular: 400,
