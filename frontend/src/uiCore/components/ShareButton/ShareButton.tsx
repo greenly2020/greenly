@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { IconButton } from "@mui/material";
-import { Share } from "@mui/icons-material";
-import { theme } from "@/styles/theme";
-import { ShareModal } from "../ShareModal";
+import React, { useState } from 'react';
+import { IconButton } from '@mui/material';
+import { Share } from '@mui/icons-material';
+import { theme } from '@/styles/theme';
+import { ShareModal } from '../ShareModal';
+import { ShareIcon } from '../Icons/ShareIcon';
 
 interface ShareButtonProps {
   url: string;
@@ -11,7 +12,7 @@ interface ShareButtonProps {
 
 function ShareButton({ url, title }: ShareButtonProps) {
   const [open, setOpen] = useState(false);
-  const [shareLink, setShareLink] = useState("");
+  const [shareLink, setShareLink] = useState('');
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -24,8 +25,8 @@ function ShareButton({ url, title }: ShareButtonProps) {
           title,
           url,
         })
-        .then((data) => console.log("Shared successfully!", data))
-        .catch((error) => console.error("Error sharing:", error));
+        .then((data) => console.log('Shared successfully!', data))
+        .catch((error) => console.error('Error sharing:', error));
     } else {
       setShareLink(`${process.env.BASE_URL}articles/${url}`);
     }
@@ -36,14 +37,9 @@ function ShareButton({ url, title }: ShareButtonProps) {
       <IconButton
         onClick={handleShare}
         aria-label="Share"
-        style={{ color: theme.palette.green.icon }}
+        sx={{ color: theme.palette.green.icon }}
       >
-        <Share
-          sx={{
-            width: "20px",
-            height: "20px",
-          }}
-        />
+        <ShareIcon />
       </IconButton>
       <ShareModal
         handleClose={handleClose}
