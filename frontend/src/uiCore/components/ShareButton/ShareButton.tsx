@@ -37,7 +37,19 @@ function ShareButton({ url, title }: ShareButtonProps) {
       <IconButton
         onClick={handleShare}
         aria-label="Share"
-        sx={{ color: theme.palette.green.icon }}
+        sx={{
+          color: theme.palette.green.icon,
+          '& .share-icon .share-icon-path': {
+            fill: '#fff',
+            transition: 'fill 0.1s ease-in',
+          },
+          '&:hover': {
+            bgcolor: 'unset',
+            '& .share-icon .share-icon-path': {
+              fill: '#c2ffc0',
+            },
+          },
+        }}
       >
         <ShareIcon />
       </IconButton>

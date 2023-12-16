@@ -67,8 +67,15 @@ export const LikeButton = (props: LikeButtonProps) => {
         aria-label="Like"
         sx={{
           color: theme.palette.green.icon,
+          '& .star-icon .star-icon-path': {
+            fill: '#fff',
+            transition: 'fill 0.1s ease-in',
+          },
           '&:hover': {
             bgcolor: 'unset',
+            '& .star-icon .star-icon-path': {
+              fill: '#c2ffc0',
+            },
           },
         }}
       >

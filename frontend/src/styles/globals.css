@@ -59,12 +59,3 @@ a {
     transform: rotate(360deg);
   }
 }
-
-.star-icon path.star-icon-path {
-  fill: #fff;
-  transition: fill 0.1s ease-in;
-}
-
-.star-icon path.star-icon-path:hover {
-  fill: #c2ffc0;
-}
