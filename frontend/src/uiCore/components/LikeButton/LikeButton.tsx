@@ -66,6 +66,7 @@ export const LikeButton = (props: LikeButtonProps) => {
         onClick={!me ? handleOpen : changeLike}
         aria-label="Like"
         sx={{
+          padding: '6px',
           color: theme.palette.green.icon,
           '& .star-icon .star-icon-path': {
             fill: '#fff',

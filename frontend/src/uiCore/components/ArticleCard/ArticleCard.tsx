@@ -9,16 +9,17 @@ import {
   Typography,
 } from '@mui/material';
 
-import dateCalculator from '../../../utils/dateCalculator/dateCalculator';
 import { ArticleEntity } from '@/__generated__/types';
 import { getCDNUrl } from '@/modules/firebase/services/storage/storage';
 import { LikeButton } from '../LikeButton';
 import { theme } from '@/styles/theme';
 import ShareButton from '../ShareButton/ShareButton';
+import { useRouter } from 'next/router';
 
 export interface IArticleCardProps {}
 
 export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
+  const { push } = useRouter();
   if (!cardData) {
     return null;
   }
@@ -76,8 +77,14 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
             />
           </CardMedia>
         </Link>
+        {/* <Link
+          href={`/articles/${cardData?.attributes?.articleLink}`}
+          style={{ color: 'inherit', textDecoration: 'none' }}
+        > */}
         <CardContent
+          onClick={() => push(`/articles/${cardData?.attributes?.articleLink}`)}
           sx={{
+            cursor: 'pointer',
             position: 'absolute',
             bottom: 0,
             paddingBottom: '40px !important',
@@ -94,28 +101,28 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               textAlign: 'left',
             }}
           >
-            <Typography
-              variant="caption"
-              fontSize="12px"
-              fontWeight={800}
-              gutterBottom
-              textTransform="uppercase"
-              mb={0}
-              color={theme.palette.white}
-              sx={{ textShadow: 'none' }}
+            <Link
+              href={`/user/${String(
+                cardData?.attributes?.author?.data?.attributes?.profileLink
+              )}`}
+              style={{
+                textDecoration: 'none',
+                color: 'inherit',
+              }}
             >
-              <Link
-                href={`/user/${String(
-                  cardData?.attributes?.author?.data?.attributes?.profileLink
-                )}`}
-                style={{
-                  textDecoration: 'none',
-                  color: 'inherit',
-                }}
+              <Typography
+                variant="caption"
+                fontSize="12px"
+                fontWeight={800}
+                gutterBottom
+                textTransform="uppercase"
+                mb={0}
+                color={theme.palette.white}
+                sx={{ textShadow: 'none' }}
               >
                 {cardData?.attributes?.author?.data?.attributes?.name}
-              </Link>
-            </Typography>
+              </Typography>
+            </Link>
             <Typography
               color={theme.palette.white}
               variant="h5"
@@ -125,15 +132,11 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               mb={2.5}
               sx={{ textShadow: 'none' }}
             >
-              <Link
-                href={`/articles/${cardData?.attributes?.articleLink}`}
-                style={{ color: 'inherit', textDecoration: 'none' }}
-              >
-                {cardData?.attributes?.title}
-              </Link>
+              {cardData?.attributes?.title}
             </Typography>
           </Container>
         </CardContent>
+        {/* </Link> */}
         <Grid
           container
           alignItems="center"
@@ -144,7 +147,7 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
           position="absolute"
           bottom={0}
         >
-          <Grid item xs={10} pb="5px">
+          <Grid item xs="auto" pb="5px">
             <Link
               color="inherit"
               href={`/browse/${String(cardData?.attributes?.category)}`}
@@ -160,19 +163,20 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               </Typography>
             </Link>
           </Grid>
+          <Grid item container xs={3}>
+            <Grid item xs={6}>
+              <ShareButton
+                url={`${cardData?.attributes?.articleLink}`}
+                title={'Share article'}
+              />
+            </Grid>
 
-          <Grid item xs={1}>
-            <ShareButton
-              url={`${cardData?.attributes?.articleLink}`}
-              title={'Share article'}
-            />
-          </Grid>
-
-          <Grid item xs={1}>
-            <LikeButton
-              liked={cardData?.attributes?.myLike || false}
-              articleId={String(cardData?.id)}
-            />
+            <Grid item xs={6}>
+              <LikeButton
+                liked={cardData?.attributes?.myLike || false}
+                articleId={String(cardData?.id)}
+              />
+            </Grid>
           </Grid>
         </Grid>
       </Card>

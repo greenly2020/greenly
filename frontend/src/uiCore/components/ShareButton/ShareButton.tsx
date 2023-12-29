@@ -38,6 +38,7 @@ function ShareButton({ url, title }: ShareButtonProps) {
         onClick={handleShare}
         aria-label="Share"
         sx={{
+          padding: '6px',
           color: theme.palette.green.icon,
           '& .share-icon .share-icon-path': {
             fill: '#fff',
