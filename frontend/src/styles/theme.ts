@@ -9,7 +9,7 @@ export const nunito = Nunito({
 });
 
 export const inter = Inter({
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
@@ -29,6 +29,7 @@ declare module '@mui/material/styles' {
     category: string;
     icon: string;
     background: string;
+    caption: string;
   }
 
   interface GrayPalette {
@@ -71,11 +72,13 @@ enum Colors {
   GREEN_CATEGORY = '#07C25E',
   GREEN_ICON = '#A5ED8C',
   GREEN_BACKGROUND = '#D2FFC2',
+  GREEN_CAPTION = '#1B4525',
 }
 
 const fontWeightRegular = 400 as number;
 const fontWeightMedium = 600 as number;
 const fontWeightBold = 700 as number;
+const fontWeightExtraBold = 800 as number;
 
 export const theme: Theme = createTheme({
   breakpoints: {
@@ -95,6 +98,7 @@ export const theme: Theme = createTheme({
       category: Colors.GREEN_CATEGORY,
       icon: Colors.GREEN_ICON,
       background: Colors.GREEN_BACKGROUND,
+      caption: Colors.GREEN_CAPTION,
     },
     gray: {
       primary: Colors.GRAY_PRIMARY,
