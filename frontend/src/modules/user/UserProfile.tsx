@@ -11,7 +11,6 @@ const UserProfile = ({ user }: UserProfileProps) => {
   return (
     <>
       <UserProfileBody user={user} />
-
       {user?.role?.name === Role.admin && <ReviewQueue />}
     </>
   );

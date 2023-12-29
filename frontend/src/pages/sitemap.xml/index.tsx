@@ -49,7 +49,7 @@ const browseURL = CATEGORIES?.map(({ value }: { value: string }) => {
   };
 });
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { data: articlesData } = await apolloClientServer?.query({
     query: GetArticlesListDocument,
     variables: {
@@ -62,12 +62,14 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
       },
     },
   });
-  const articlesURL = articlesData?.articles?.data?.map(({ attributes }: { attributes: Article }) => {
-    return {
-      loc: `${process.env.BASE_URL}articles/${attributes?.articleLink}`,
-      lastmod: new Date().toISOString(),
-    };
-  });
+  const articlesURL = articlesData?.articles?.data?.map(
+    ({ attributes }: { attributes: Article }) => {
+      return {
+        loc: `${process.env.BASE_URL}articles/${attributes?.articleLink}`,
+        lastmod: new Date().toISOString(),
+      };
+    }
+  );
 
   const { data: authorsData } = await apolloClientServer?.query({
     query: GetUsersDocument,
@@ -77,14 +79,22 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
       },
     },
   });
+
   const authorsURL = authorsData?.usersPermissionsUsers?.data?.map(
     ({ attributes }: { attributes: UsersPermissionsUser }) => {
-      return {
-        loc: `${process.env.BASE_URL}user/${attributes?.profileLink}`,
-        lastmod: new Date().toISOString(),
-        // changefreq
-        // priority
-      };
+      let profileLink;
+      const regex = /^[a-zA-Z0-9\-_]+$/;
+      if (attributes?.profileLink && regex.test(attributes?.profileLink)) {
+        profileLink = `${process.env.BASE_URL}user/${attributes?.profileLink}`;
+      }
+      if (profileLink) {
+        return {
+          loc: profileLink,
+          lastmod: new Date().toISOString(),
+          // changefreq
+          // priority
+        };
+      }
     }
   );
 

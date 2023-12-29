@@ -15,6 +15,7 @@ import { LikeButton } from '../LikeButton';
 import { theme } from '@/styles/theme';
 import ShareButton from '../ShareButton/ShareButton';
 import { useRouter } from 'next/router';
+import { formatProfileLink } from '@/uiCore/utils/utils';
 
 export interface IArticleCardProps {}
 
@@ -31,6 +32,10 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
       : cardData?.attributes?.headerImage
       ? cardData?.attributes?.headerImage
       : 'https://picsum.photos/id/11/400/225';
+
+  const profileLink = formatProfileLink(
+    cardData?.attributes?.author?.data?.attributes?.profileLink || ''
+  );
 
   return (
     <Grid
@@ -77,10 +82,6 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
             />
           </CardMedia>
         </Link>
-        {/* <Link
-          href={`/articles/${cardData?.attributes?.articleLink}`}
-          style={{ color: 'inherit', textDecoration: 'none' }}
-        > */}
         <CardContent
           onClick={() => push(`/articles/${cardData?.attributes?.articleLink}`)}
           sx={{
@@ -101,28 +102,30 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               textAlign: 'left',
             }}
           >
-            <Link
-              href={`/user/${String(
-                cardData?.attributes?.author?.data?.attributes?.profileLink
-              )}`}
+            {/* <Link
+              href={profileLink || '/'}
               style={{
                 textDecoration: 'none',
                 color: 'inherit',
               }}
+            > */}
+            <Typography
+              onClick={(e) => {
+                e.stopPropagation();
+                push(profileLink || '/');
+              }}
+              variant="caption"
+              fontSize="12px"
+              fontWeight={800}
+              gutterBottom
+              textTransform="uppercase"
+              mb={0}
+              color={theme.palette.white}
+              sx={{ textShadow: 'none' }}
             >
-              <Typography
-                variant="caption"
-                fontSize="12px"
-                fontWeight={800}
-                gutterBottom
-                textTransform="uppercase"
-                mb={0}
-                color={theme.palette.white}
-                sx={{ textShadow: 'none' }}
-              >
-                {cardData?.attributes?.author?.data?.attributes?.name}
-              </Typography>
-            </Link>
+              {cardData?.attributes?.author?.data?.attributes?.name}
+            </Typography>
+            {/* </Link> */}
             <Typography
               color={theme.palette.white}
               variant="h5"
@@ -136,7 +139,6 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
             </Typography>
           </Container>
         </CardContent>
-        {/* </Link> */}
         <Grid
           container
           alignItems="center"

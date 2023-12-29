@@ -20,14 +20,22 @@ import ShareButton from '../ShareButton/ShareButton';
 import { useDeleteArticleMutation } from '@/modules/article/graphql/mutation/__generated__/delete';
 import { useIncrementArticleViewsMutation } from '@/modules/article/graphql/mutation/__generated__/incrementArticleViews';
 import { useUpdateArticleMutation } from '@/modules/article/graphql/mutation/__generated__/update';
+import { formatProfileLink } from '@/uiCore/utils/utils';
 
-const DynamicEditor = dynamic(() => import('react-draft-wysiwyg').then(mod => mod.Editor), {
-  ssr: false,
-});
+const DynamicEditor = dynamic(
+  () => import('react-draft-wysiwyg').then((mod) => mod.Editor),
+  {
+    ssr: false,
+  }
+);
 
 export const ArticleBody = ({ article }: { article: ArticleEntity | null }) => {
-  const [editorState, setEditorState] = useState<EditorState | undefined>(undefined);
-  const [editorAbstractState, setEditorAbstractState] = useState<EditorState | undefined>(undefined);
+  const [editorState, setEditorState] = useState<EditorState | undefined>(
+    undefined
+  );
+  const [editorAbstractState, setEditorAbstractState] = useState<
+    EditorState | undefined
+  >(undefined);
   const [incrementArticleViewsMutation] = useIncrementArticleViewsMutation();
 
   const { pathname, push } = useRouter();
@@ -53,17 +61,30 @@ export const ArticleBody = ({ article }: { article: ArticleEntity | null }) => {
   }, []);
 
   useEffect(() => {
-    if (typeof abstract === 'string' && JSON.parse(abstract).blocks[0].text !== '') {
-      setEditorAbstractState(EditorState.createWithContent(convertFromRaw(JSON.parse(abstract))));
+    if (
+      typeof abstract === 'string' &&
+      JSON.parse(abstract).blocks[0].text !== ''
+    ) {
+      setEditorAbstractState(
+        EditorState.createWithContent(convertFromRaw(JSON.parse(abstract)))
+      );
     }
     if (
       typeof article?.attributes?.articleBody === 'string' &&
       JSON.parse(article?.attributes?.articleBody).blocks !== null
     ) {
-      setEditorState(EditorState.createWithContent(convertFromRaw(JSON.parse(article?.attributes?.articleBody || ''))));
+      setEditorState(
+        EditorState.createWithContent(
+          convertFromRaw(JSON.parse(article?.attributes?.articleBody || ''))
+        )
+      );
     }
     if (typeof article?.attributes?.articleBody === 'object') {
-      setEditorState(EditorState.createWithContent(convertFromRaw(JSON.parse(article?.attributes?.articleBody || ''))));
+      setEditorState(
+        EditorState.createWithContent(
+          convertFromRaw(JSON.parse(article?.attributes?.articleBody || ''))
+        )
+      );
     }
   }, [abstract, article?.attributes?.articleBody]);
 
@@ -91,13 +112,16 @@ export const ArticleBody = ({ article }: { article: ArticleEntity | null }) => {
     return article?.attributes?.author?.data?.id === me?.id;
   }, [article?.attributes?.author?.data?.id, me?.id]);
 
-  const profileLink = useMemo(
-    () => '/user/' + article?.attributes?.author?.data?.attributes?.profileLink,
-    [article?.attributes?.author?.data?.attributes?.profileLink]
+  const profileLink = formatProfileLink(
+    article?.attributes?.author?.data?.attributes?.profileLink || ''
   );
 
+  const meProfileLink = formatProfileLink(me?.profileLink || '');
+
   const onEdit = () => {
-    push(`/submit?article=${article?.id}&author=${article?.attributes?.author?.data?.id}`);
+    push(
+      `/submit?article=${article?.id}&author=${article?.attributes?.author?.data?.id}`
+    );
   };
 
   const [deleteArticle] = useDeleteArticleMutation();
@@ -110,11 +134,12 @@ export const ArticleBody = ({ article }: { article: ArticleEntity | null }) => {
     });
 
     alert('Article has been deleted succesfully.');
-    push(`/user/${me?.profileLink}`);
+    push(meProfileLink);
   };
 
   const url =
-    article?.attributes?.headerImage && article?.attributes?.headerImage.includes('appspot.com')
+    article?.attributes?.headerImage &&
+    article?.attributes?.headerImage.includes('appspot.com')
       ? getCDNUrl(article?.attributes?.headerImage, 1200, 500)
       : article?.attributes?.headerImage
       ? article?.attributes?.headerImage
@@ -181,31 +206,42 @@ export const ArticleBody = ({ article }: { article: ArticleEntity | null }) => {
             </Box>
           )}
 
-          {typeof abstract === 'string' && JSON.parse(abstract).blocks[0].text !== '' && (
-            <DynamicEditor
-              toolbarHidden
-              readOnly
-              editorState={editorAbstractState}
-              onEditorStateChange={handleEditorAbstractChange}
-              wrapperClassName={'wrapperHidden'}
-              editorClassName={'editorHidden'}
-            />
-          )}
+          {typeof abstract === 'string' &&
+            JSON.parse(abstract).blocks[0].text !== '' && (
+              <DynamicEditor
+                toolbarHidden
+                readOnly
+                editorState={editorAbstractState}
+                onEditorStateChange={handleEditorAbstractChange}
+                wrapperClassName={'wrapperHidden'}
+                editorClassName={'editorHidden'}
+              />
+            )}
           <Box mx={2} display="flex" flexWrap="wrap" alignItems="center">
             <Typography fontSize="16px">
               By
-              <Link href={profileLink} style={{ color: theme.palette.green.category }}>
+              <Link
+                href={profileLink}
+                style={{ color: theme.palette.green.category }}
+              >
                 {' '}
                 {article?.attributes?.author?.data?.attributes?.name}{' '}
               </Link>{' '}
-              - {dateCalculator(article?.attributes?.dateCreated)} - {article?.attributes?.readTime} minute read -{' '}
+              - {dateCalculator(article?.attributes?.dateCreated)} -{' '}
+              {article?.attributes?.readTime} minute read -{' '}
               {article?.attributes?.views} views
             </Typography>
             {article?.id && (
               <Box>
-                <LikeButton articleId={article?.id} liked={article?.attributes?.myLike || false} />
+                <LikeButton
+                  articleId={article?.id}
+                  liked={article?.attributes?.myLike || false}
+                />
                 {article?.attributes?.articleLink && (
-                  <ShareButton url={article?.attributes?.articleLink} title={'Share article'} />
+                  <ShareButton
+                    url={article?.attributes?.articleLink}
+                    title={'Share article'}
+                  />
                 )}
                 <ClapButton
                   articleId={article?.id}
@@ -246,13 +282,27 @@ export const ArticleBody = ({ article }: { article: ArticleEntity | null }) => {
           )}
         </StyledArticleContainer>
       </Box>
-      {!article?.attributes?.reviewed && isAdmin && !pathname.includes('/submit') && (
-        <div style={{ paddingTop: '30px', paddingLeft: '45%', paddingRight: '45%' }} data-testid="approve-button">
-          <Button variant="primary" component="button" label="approveButton" onClick={() => handleSubmitArticle()}>
-            Approve
-          </Button>
-        </div>
-      )}
+      {!article?.attributes?.reviewed &&
+        isAdmin &&
+        !pathname.includes('/submit') && (
+          <div
+            style={{
+              paddingTop: '30px',
+              paddingLeft: '45%',
+              paddingRight: '45%',
+            }}
+            data-testid="approve-button"
+          >
+            <Button
+              variant="primary"
+              component="button"
+              label="approveButton"
+              onClick={() => handleSubmitArticle()}
+            >
+              Approve
+            </Button>
+          </div>
+        )}
     </>
   );
 };
