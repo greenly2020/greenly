@@ -41,7 +41,14 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
       key={cardData?.id}
       data-testid={`articleCard-${cardData.id}`}
     >
-      <Card elevation={4} sx={{ position: 'relative', borderRadius: '10px' }}>
+      <Card
+        elevation={4}
+        sx={{
+          position: 'relative',
+          borderRadius: '10px',
+          boxShadow: '0 0 10px rgba(0, 0, 0, 0.16)',
+        }}
+      >
         <Link
           color="inherit"
           href={`/articles/${cardData.attributes?.articleLink}`}
@@ -51,7 +58,8 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               opacity: 1,
               height: '265px',
               position: 'relative',
-              background: 'linear-gradient(to right bottom, #430089, #82ffa1)',
+              background:
+                'linear-gradient( to bottom, rgba(83, 83, 83, 0.82) 0%,  rgba(83, 83, 83, 0.82) 66%,rgba(83, 83, 83, 0.82) 66%,rgba(83, 83, 83, 0.82) 100%)',
             }}
           >
             <Image
@@ -88,11 +96,13 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
           >
             <Typography
               variant="caption"
-              fontSize="16px"
+              fontSize="12px"
+              fontWeight={800}
               gutterBottom
               textTransform="uppercase"
               mb={0}
               color={theme.palette.white}
+              sx={{ textShadow: 'none' }}
             >
               <Link
                 href={`/user/${String(
@@ -110,7 +120,10 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               color={theme.palette.white}
               variant="h5"
               fontSize="22px"
+              fontWeight={500}
               gutterBottom
+              mb={2.5}
+              sx={{ textShadow: 'none' }}
             >
               <Link
                 href={`/articles/${cardData?.attributes?.articleLink}`}
@@ -138,7 +151,8 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
             >
               <Typography
                 variant="caption"
-                color={theme.palette.green.category}
+                fontSize="12px"
+                color={theme.palette.green.caption}
                 fontWeight={theme.typography.fontWeightBold}
               >
                 {(cardData?.attributes?.category?.charAt(0)?.toUpperCase() ??

@@ -4,8 +4,9 @@ import { gql, useMutation } from '@apollo/client';
 import { AuthModal } from '../AuthModal';
 import { useMe } from '../../../modules/hooks/useMe';
 import { IconButton } from '@mui/material';
-import { Star, StarBorder } from '@mui/icons-material';
 import { theme } from '@/styles/theme';
+import { StarIcon } from '../Icons/StarIcon';
+import { StarActiveIcon } from '../Icons/StarActiveIcon';
 
 export type LikeButtonProps = {
   liked: boolean;
@@ -64,9 +65,21 @@ export const LikeButton = (props: LikeButtonProps) => {
         disabled={articleId === '0'}
         onClick={!me ? handleOpen : changeLike}
         aria-label="Like"
-        style={{ color: theme.palette.green.icon }}
+        sx={{
+          color: theme.palette.green.icon,
+          '& .star-icon .star-icon-path': {
+            fill: '#fff',
+            transition: 'fill 0.1s ease-in',
+          },
+          '&:hover': {
+            bgcolor: 'unset',
+            '& .star-icon .star-icon-path': {
+              fill: '#c2ffc0',
+            },
+          },
+        }}
       >
-        {liked ? <Star /> : <StarBorder />}
+        {liked ? <StarActiveIcon /> : <StarIcon />}
       </IconButton>
       <AuthModal handleClose={handleClose} open={open} />
     </>
