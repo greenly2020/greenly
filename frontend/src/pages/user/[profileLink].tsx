@@ -15,32 +15,6 @@ interface userDataProp {
 }
 
 export const UserPage = ({ userData }: { userData: userDataProp }) => {
-  // const { query } = useRouter();
-
-  // const link = query.profileLink as string;
-
-  // const { error, loading, user } = useProfile(link);
-
-  // if (error) {
-  //   return (
-  //     <Container maxWidth="sm">
-  //       <Typography> Something went wrong please try again. </Typography>
-  //     </Container>
-  //   );
-  // }
-
-  // if (loading) {
-  //   return <LinearProgress color="secondary" />;
-  // }
-
-  // if (!user) {
-  //   return (
-  //     <div>
-  //       <Typography> The user you are looking for does not exist. Please try a new one. </Typography>
-  //     </div>
-  //   );
-  // }
-
   return (
     <>
       <Head>

@@ -169,14 +169,7 @@ export const ArticleBody = ({ article }: { article: ArticleEntity | null }) => {
           />
         </Box>
         <StyledArticleContainer maxWidth="sm">
-          <Typography
-            variant={'h1'}
-            fontSize="48px"
-            // fontFamily='AvenirNext-Regular'
-            // TODO: Add correct fontFamily
-            fontFamily="serif"
-            marginBottom="24px"
-          >
+          <Typography variant={'h1'} fontSize="48px" marginBottom="24px">
             {article?.attributes?.title}
           </Typography>
           {(isAdmin || isUserArticleOwner) && pathname.includes('/article') && (
@@ -222,6 +215,7 @@ export const ArticleBody = ({ article }: { article: ArticleEntity | null }) => {
               By
               <Link
                 href={profileLink}
+                target={profileLink?.includes('/user/') ? '_self' : '_blank'}
                 style={{ color: theme.palette.green.category }}
               >
                 {' '}

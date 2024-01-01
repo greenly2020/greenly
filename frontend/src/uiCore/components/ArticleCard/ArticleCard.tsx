@@ -55,17 +55,22 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
           boxShadow: '0 0 10px rgba(0, 0, 0, 0.16)',
         }}
       >
-        <Link
-          color="inherit"
-          href={`/articles/${cardData.attributes?.articleLink}`}
+        <CardMedia
+          // onClick={() => push(`/articles/${cardData?.attributes?.articleLink}`)}
+          sx={{
+            cursor: 'pointer',
+            opacity: 1,
+            height: '265px',
+            position: 'relative',
+            background:
+              'linear-gradient( to bottom, rgba(83, 83, 83, 0.82) 0%,  rgba(83, 83, 83, 0.82) 66%,rgba(83, 83, 83, 0.82) 66%,rgba(83, 83, 83, 0.82) 100%)',
+          }}
         >
-          <CardMedia
-            sx={{
-              opacity: 1,
-              height: '265px',
-              position: 'relative',
-              background:
-                'linear-gradient( to bottom, rgba(83, 83, 83, 0.82) 0%,  rgba(83, 83, 83, 0.82) 66%,rgba(83, 83, 83, 0.82) 66%,rgba(83, 83, 83, 0.82) 100%)',
+          <Link
+            href={`/articles/${cardData?.attributes?.articleLink}`}
+            style={{
+              textDecoration: 'none',
+              color: 'inherit',
             }}
           >
             <Image
@@ -80,63 +85,65 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
                 opacity: 0.6,
               }}
             />
-          </CardMedia>
-        </Link>
+          </Link>
+        </CardMedia>
         <CardContent
-          onClick={() => push(`/articles/${cardData?.attributes?.articleLink}`)}
           sx={{
-            cursor: 'pointer',
             position: 'absolute',
             bottom: 0,
             paddingBottom: '40px !important',
             padding: 0,
             color: theme.palette.white,
             marginBottom: 0,
-            textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
           }}
         >
           <Container
             sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignContent: 'space-between',
               paddingLeft: '12px',
               paddingRight: '24px',
               textAlign: 'left',
             }}
           >
-            {/* <Link
+            <Link
               href={profileLink || '/'}
+              target={profileLink?.includes('/user/') ? '_self' : '_blank'}
+              style={{
+                textDecoration: 'none',
+                lineHeight: '30px',
+                color: 'inherit',
+              }}
+            >
+              <Typography
+                variant="caption"
+                fontSize="12px"
+                fontWeight={800}
+                py={1}
+                textTransform="uppercase"
+                color={theme.palette.white}
+              >
+                {cardData?.attributes?.author?.data?.attributes?.name}
+              </Typography>
+            </Link>
+            <Link
+              href={`/articles/${cardData?.attributes?.articleLink}`}
               style={{
                 textDecoration: 'none',
                 color: 'inherit',
               }}
-            > */}
-            <Typography
-              onClick={(e) => {
-                e.stopPropagation();
-                push(profileLink || '/');
-              }}
-              variant="caption"
-              fontSize="12px"
-              fontWeight={800}
-              gutterBottom
-              textTransform="uppercase"
-              mb={0}
-              color={theme.palette.white}
-              sx={{ textShadow: 'none' }}
             >
-              {cardData?.attributes?.author?.data?.attributes?.name}
-            </Typography>
-            {/* </Link> */}
-            <Typography
-              color={theme.palette.white}
-              variant="h5"
-              fontSize="22px"
-              fontWeight={500}
-              gutterBottom
-              mb={2.5}
-              sx={{ textShadow: 'none' }}
-            >
-              {cardData?.attributes?.title}
-            </Typography>
+              <Typography
+                color={theme.palette.white}
+                variant="h5"
+                fontSize="22px"
+                fontWeight={500}
+                pb={2.5}
+              >
+                {cardData?.attributes?.title}
+              </Typography>
+            </Link>
           </Container>
         </CardContent>
         <Grid
