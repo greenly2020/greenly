@@ -56,7 +56,6 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
         }}
       >
         <CardMedia
-          // onClick={() => push(`/articles/${cardData?.attributes?.articleLink}`)}
           sx={{
             cursor: 'pointer',
             opacity: 1,
@@ -73,23 +72,34 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               color: 'inherit',
             }}
           >
-            <Image
-              src={cdnUrl}
-              alt={`Article Cover`}
-              fill={true}
-              priority={true}
-              sizes="400px"
+            <div
               style={{
-                objectFit: 'cover',
-                paddingBottom: '40px',
-                opacity: 0.6,
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                zIndex: 2,
+                background:
+                  'linear-gradient(to bottom, rgba(83,83,83,0) 0%, rgba(83,83,83,0.5) 15%, rgba(83,83,83,0.8) 30%, rgba(83, 83, 83, 0.8) 100%)',
               }}
             />
           </Link>
+          <Image
+            src={cdnUrl}
+            alt={`Article Cover`}
+            fill={true}
+            priority={true}
+            sizes="400px"
+            style={{
+              objectFit: 'cover',
+              paddingBottom: '40px',
+              zIndex: 1,
+            }}
+          />
         </CardMedia>
         <CardContent
           sx={{
             position: 'absolute',
+            zIndex: 3,
             bottom: 0,
             paddingBottom: '40px !important',
             padding: 0,
@@ -102,6 +112,7 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               display: 'flex',
               flexDirection: 'column',
               alignContent: 'space-between',
+              gap: '4px',
               paddingLeft: '12px',
               paddingRight: '24px',
               textAlign: 'left',
@@ -119,8 +130,9 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               <Typography
                 variant="caption"
                 fontSize="12px"
+                letterSpacing={1}
                 fontWeight={800}
-                py={1}
+                py={2}
                 textTransform="uppercase"
                 color={theme.palette.white}
               >
@@ -154,6 +166,7 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
           justifyContent="space-between"
           height="40px"
           position="absolute"
+          zIndex={3}
           bottom={0}
         >
           <Grid item xs="auto" pb="5px">
