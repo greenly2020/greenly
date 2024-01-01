@@ -2,7 +2,15 @@ import React from 'react';
 import Link from 'next/link';
 import { FiSearch } from 'react-icons/fi';
 import { FaRegUserCircle } from 'react-icons/fa';
-import { AppBar, Box, Container, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  Container,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 import { ButtonBase as Button, IconButton, TextField } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -22,7 +30,9 @@ export interface INavbarProps {
 export const NavBar = () => {
   const router = useRouter();
 
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
 
   const { me } = useMe();
 
@@ -51,7 +61,13 @@ export const NavBar = () => {
 
   const DropMenu = () => {
     return (
-      <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
         <MenuItem onClick={handleClose}>
           <Link href={'/user'} style={{ color: theme.palette.green.primary }}>
             {LinkText.profileLinkText}
@@ -80,7 +96,11 @@ export const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" color="inherit">
+    <AppBar
+      position="static"
+      color="inherit"
+      sx={{ bgcolor: theme.palette.gray.backgroundSecondary }}
+    >
       <Container maxWidth="xl">
         <StyledNavBar>
           <Toolbar className={'noPadding'}>
@@ -110,22 +130,34 @@ export const NavBar = () => {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
               >
-                {MENU_ITEMS.map(item => (
+                {MENU_ITEMS.map((item) => (
                   <MenuItem key={item.label} onClick={handleCloseNavMenu}>
                     <Typography variant="h6">
-                      <Link className={'menuLink'} href={item.link} style={{ color: '#000000de' }}>
+                      <Link
+                        className={'menuLink'}
+                        href={item.link}
+                        style={{ color: '#000000de' }}
+                      >
                         {item.label}
                       </Link>
                     </Typography>
                   </MenuItem>
                 ))}
                 <MenuItem onClick={handleClose} className={'dropdownItem'}>
-                  <Link className={'menuLink'} href={'/user'} style={{ color: theme.palette.green.primary }}>
+                  <Link
+                    className={'menuLink'}
+                    href={'/user'}
+                    style={{ color: theme.palette.green.primary }}
+                  >
                     Profile
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={handleClose} className={'dropdownItem'}>
-                  <Link className={'menuLink'} href={'/help'} style={{ color: theme.palette.green.primary }}>
+                  <Link
+                    className={'menuLink'}
+                    href={'/help'}
+                    style={{ color: theme.palette.green.primary }}
+                  >
                     Help
                   </Link>
                 </MenuItem>
@@ -142,59 +174,95 @@ export const NavBar = () => {
               <GreenlyLogo />
             </Link>
 
-            <Typography variant="body2" className={'navbarText'}>
+            <Typography
+              variant="body2"
+              className={'navbarText'}
+              fontSize="14px"
+              fontWeight={500}
+              color={theme.palette.gray.grayLight}
+            >
               Front page of the green revolution.
             </Typography>
 
-            <Box className={'rightContainer'}>
-              {router.pathname !== '/submit' && (
-                <Link href={me?.id ? '/submit' : '/auth'} className={'submitButtonLink'}>
-                  <Typography variant="body2" fontSize="20px" className={'submitButtonText'}>
-                    Submit
-                  </Typography>
-                </Link>
-              )}
-
-              <Button type="submit" aria-controls="simple-menu" aria-haspopup="true" className={'submitButton'}>
-                <FiSearch size={30} className={'navbarIcon'} />
-              </Button>
+            <Box className={'rightContainer'} gap="12px">
               <TextField
-                label="Search"
+                label="Search Greenly"
                 id="outlined-size-small"
                 value={term}
                 onChange={handleTermChange}
-                onKeyDown={e => {
+                onKeyDown={(e) => {
                   if (e.code === 'Enter' || e.key === 'Enter') {
                     handleSearch();
                   }
                 }}
                 onBlur={handleSearch}
                 InputProps={{
-                  endAdornment: <FiSearch size={30} className={'mobileVisible'} />,
+                  endAdornment: <FiSearch size={30} />,
                 }}
                 variant="outlined"
                 size="small"
                 sx={{
-                  '& .MuiOutlinedInput-root': { fontSize: '1rem', pr: '10px', color: theme.palette.gray.primary },
-                  '& .MuiFormLabel-root': { fontSize: '1rem' },
+                  '& .MuiOutlinedInput-root': {
+                    fontSize: '1rem',
+                    pr: '10px',
+                    color: theme.palette.gray.primary,
+                  },
+                  '& .MuiFormLabel-root': { fontSize: '14px', fontWeight: 500 },
+                  '& .MuiOutlinedInput-notchedOutline': {
+                    borderColor: theme.palette.gray.grayLightSecondary,
+                  },
                 }}
               />
               <Box sx={{ display: { xs: 'none', md: 'block' } }} width={62}>
                 {me ? (
                   <>
-                    <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                    <Button
+                      aria-controls="simple-menu"
+                      aria-haspopup="true"
+                      onClick={handleClick}
+                    >
                       <FaRegUserCircle size={30} className={'navbarIcon'} />
                     </Button>
                     <DropMenu />
                   </>
                 ) : (
-                  <Typography variant="h6" className={'loginText'}>
-                    <Link href={'/auth'} style={{ color: theme.palette.gray.primary }}>
-                      Login
-                    </Link>
-                  </Typography>
+                  <Button
+                    sx={{
+                      height: '40px',
+                      borderRadius: '4px',
+                      border: `1px solid ${theme.palette.gray.grayLightSecondary}`,
+                      background: '#D9D9D9',
+                      padding: '9px 10px',
+                      ml: '2px',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      color: '#535353',
+                      fontFamily: 'Inter',
+                    }}
+                    onClick={() => router.push('/auth')}
+                  >
+                    Login
+                  </Button>
                 )}
               </Box>
+              {router.pathname !== '/submit' && (
+                <Button
+                  sx={{
+                    height: '40px',
+                    borderRadius: '4px',
+                    border: '1px solid #1B4525',
+                    background: '#1B4525',
+                    padding: '9px 10px',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: '#C2FFC0',
+                    fontFamily: 'Inter',
+                  }}
+                  onClick={() => router.push(me?.id ? '/submit' : '/auth')}
+                >
+                  Write
+                </Button>
+              )}
             </Box>
           </Toolbar>
         </StyledNavBar>
