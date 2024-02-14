@@ -120,6 +120,7 @@ export const theme: Theme = createTheme({
       // 'Helvetica',
       // 'Arial',
       'Inter',
+      'Nunito',
       'sans-serif',
     ].join(','),
     fontWeightRegular: 400,
