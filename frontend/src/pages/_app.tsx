@@ -37,7 +37,12 @@ function App({
   const ssrMatchMedia = (query: any) => ({
     matches: mediaQuery.match(query, {
       // The estimated CSS width of the browser.
-      width: deviceType === 'mobile' ? '0px' : deviceType === 'tablet' ? '641px' : '1141px',
+      width:
+        deviceType === 'mobile'
+          ? '0px'
+          : deviceType === 'tablet'
+          ? '641px'
+          : '1141px',
     }),
   });
 
@@ -50,7 +55,10 @@ function App({
   };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(async firebaseUser => {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem(JWT_KEY);
+    }
+    const unsubscribe = auth.onAuthStateChanged(async (firebaseUser) => {
       // @ts-ignore
       if (firebaseUser?.accessToken) {
         // @ts-ignore
@@ -102,7 +110,8 @@ App.getInitialProps = async (context: AppContext) => {
   let deviceType;
 
   if (context.ctx.req) {
-    deviceType = parser(context.ctx.req.headers['user-agent']).device.type || 'desktop';
+    deviceType =
+      parser(context.ctx.req.headers['user-agent']).device.type || 'desktop';
   }
 
   return {
