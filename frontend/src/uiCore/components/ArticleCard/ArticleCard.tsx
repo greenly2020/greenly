@@ -147,6 +147,7 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
               }}
             >
               <Typography
+                component="h2"
                 color={theme.palette.white}
                 variant="h5"
                 fontSize="22px"
