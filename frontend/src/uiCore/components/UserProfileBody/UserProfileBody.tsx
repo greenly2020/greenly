@@ -326,7 +326,12 @@ export const UserProfileBody = forwardRef<HTMLElement, UserProfileBodyProps>(
             elevation={0}
           >
             <StyledCardContent>
-              <Typography color="#002d15" fontSize="48px" align="center">
+              <Typography
+                component="h1"
+                color="#002d15"
+                fontSize="48px"
+                align="center"
+              >
                 {user.name}
               </Typography>
 

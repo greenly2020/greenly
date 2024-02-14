@@ -202,6 +202,7 @@ export const NavBar = () => {
                 variant="outlined"
                 size="small"
                 sx={{
+                  backgroundColor: 'white',
                   '& .MuiOutlinedInput-root': {
                     fontSize: '1rem',
                     pr: '10px',
@@ -237,7 +238,8 @@ export const NavBar = () => {
                       fontSize: '14px',
                       fontWeight: 500,
                       color: '#535353',
-                      fontFamily: 'Inter',
+                      fontFamily: theme.typography.fontFamily,
+                      letterSpacing: '0.4px',
                     }}
                     onClick={() => router.push('/auth')}
                   >
@@ -256,7 +258,8 @@ export const NavBar = () => {
                     fontSize: '14px',
                     fontWeight: 500,
                     color: '#C2FFC0',
-                    fontFamily: 'Inter',
+                    fontFamily: theme.typography.fontFamily,
+                    letterSpacing: '0.4px',
                   }}
                   onClick={() => router.push(me?.id ? '/submit' : '/auth')}
                 >

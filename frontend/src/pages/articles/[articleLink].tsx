@@ -6,8 +6,8 @@ import { GetServerSideProps } from 'next';
 import { GetArticleByLinkDocument } from '@/modules/article/graphql/query/__generated__/getArticleByLink';
 import { apolloClientServer } from '@/api/apolloClientServer';
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
-  let parsedArticleData = { title: '', abstract: '' };
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  let parsedArticleData = { title: '', abstract: '', link: '' };
   const articleLink = ctx?.query?.articleLink as string | undefined;
   if (!articleLink) {
     return {
@@ -22,9 +22,13 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
     },
   });
 
-  const abstract: string = articleData?.articleByLink?.data?.attributes?.abstract as string;
+  const abstract: string = articleData?.articleByLink?.data?.attributes
+    ?.abstract as string;
 
-  if (typeof abstract === 'string' && JSON.parse(abstract).blocks[0].text !== '') {
+  if (
+    typeof abstract === 'string' &&
+    JSON.parse(abstract).blocks[0].text !== ''
+  ) {
     parsedArticleData = {
       ...parsedArticleData,
       abstract: JSON.parse(abstract)
@@ -39,11 +43,12 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   return {
     props: {
       articleData: parsedArticleData,
+      articleLink,
     },
   };
 };
 
-export const ArticlePage = ({ articleData }: any) => {
+export const ArticlePage = ({ articleData, articleLink }: any) => {
   return (
     <>
       <Head>
@@ -51,6 +56,11 @@ export const ArticlePage = ({ articleData }: any) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={articleData?.abstract || ''} />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="canonical"
+          href={`/articles/${articleLink}`}
+          key="canonical"
+        />
       </Head>
       <MainLayout mailForm={false}>
         <Article />
