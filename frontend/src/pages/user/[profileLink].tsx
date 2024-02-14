@@ -14,15 +14,21 @@ interface userDataProp {
   bio?: string;
 }
 
-export const UserPage = ({ userData }: { userData: userDataProp }) => {
+export const UserPage = ({
+  userData,
+  profileLink,
+}: {
+  userData: userDataProp;
+  profileLink: string;
+}) => {
   return (
     <>
       <Head>
         <title>{userData?.name || 'Greenly'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={userData?.bio || ''} />
-
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={`/user/${profileLink}`} key="canonical" />
       </Head>
       <MainLayout>
         <UserProfile user={userData as UserProfileType} />
@@ -61,6 +67,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
     props: {
       userData: parsedProfileData,
+      profileLink,
     },
   };
 };

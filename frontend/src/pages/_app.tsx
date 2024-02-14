@@ -2,18 +2,18 @@ import { useEffect } from 'react';
 import type { AppContext, AppProps } from 'next/app';
 import NextApp from 'next/app';
 import { ApolloProvider } from '@apollo/client';
-import { useApollo } from '@/api/apolloClient';
 import { ThemeProvider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import parser from 'ua-parser-js';
 import mediaQuery from 'css-mediaquery';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
+import { useApollo, JWT_KEY } from '@/api/apolloClient';
 import { auth } from '@/modules/firebase/firebaseSetup';
 import { globalState } from '@/config/globalState';
 import { LOGIN_BY_TOKEN } from '@/config/loginByTokenMutation';
 import { MeDocument } from '@/modules/user/graphql/query/__generated__/me';
-import { JWT_KEY } from '@/api/apolloClient';
 
 import { theme } from '@/styles/theme';
 import '@/styles/globals.css';
@@ -100,6 +100,7 @@ function App({
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Component {...pageProps} />
+          <GoogleAnalytics gaId="G-XYZ" />
         </ThemeProvider>
       </ApolloProvider>
     </CacheProvider>
