@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Greenly articles | RSS Feed]]></title>
+        <description><![CDATA[Welcome to Greenly!]]></description>
+        <link>http://localhost:3000</link>
+        <image>
+            <url>http://localhost:3000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.5e8a279a.png&amp;w=256&amp;q=75</url>
+            <title>Greenly articles | RSS Feed</title>
+            <link>http://localhost:3000</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Tue, 02 Apr 2024 13:32:14 GMT</lastBuildDate>
+        <atom:link href="http://localhost:3000/rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Tue, 02 Apr 2024 13:32:14 GMT</pubDate>
+        <copyright><![CDATA[All rights reserved 2024]]></copyright>
+        <item>
+            <title><![CDATA[Harnessing Floating Photovoltaics for Sustainable Energy]]></title>
+            <link>http://localhost:3000/articles/harnessing-floating-photovoltaics-for-sustainable-energy</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/harnessing-floating-photovoltaics-for-sustainable-energy</guid>
+            <pubDate>Thu, 21 Mar 2024 00:07:54 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Digital Sustainability: Mitigating Tech's Environmental Impact]]></title>
+            <link>http://localhost:3000/articles/the-hidden-cost-of-technology-a-call-for-digital-sustainability</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-hidden-cost-of-technology-a-call-for-digital-sustainability</guid>
+            <pubDate>Mon, 11 Mar 2024 05:00:41 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What to Eat and Why: The Keys to a Healthy and Climate-Friendly Diet]]></title>
+            <link>http://localhost:3000/articles/what-to-eat-and-why</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/what-to-eat-and-why</guid>
+            <pubDate>Fri, 01 Mar 2024 19:02:13 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sustainability Spotlight: Autodesk's Green Journey]]></title>
+            <link>http://localhost:3000/articles/sustainability-spotlight-autodesks-green-journey</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/sustainability-spotlight-autodesks-green-journey</guid>
+            <pubDate>Sat, 24 Feb 2024 18:57:37 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[ Powering Tomorrow: a Guide to EV Charging  ]]></title>
+            <link>http://localhost:3000/articles/g</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/g</guid>
+            <pubDate>Sun, 04 Feb 2024 21:16:30 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dams and Hydroelectric Power: Past, Present, Future]]></title>
+            <link>http://localhost:3000/articles/dams-and-hydropower-beneficial-or-the-need-for-removal</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/dams-and-hydropower-beneficial-or-the-need-for-removal</guid>
+            <pubDate>Sun, 28 Jan 2024 19:03:35 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Climate Change: Global Call for Action]]></title>
+            <link>http://localhost:3000/articles/climate-change-a-time-for-action</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/climate-change-a-time-for-action</guid>
+            <pubDate>Sun, 28 Jan 2024 18:34:27 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Garment Worker Protection Acts in California]]></title>
+            <link>http://localhost:3000/articles/the-garment-worker-protection-acts-in-california</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-garment-worker-protection-acts-in-california</guid>
+            <pubDate>Sun, 21 Jan 2024 16:24:42 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[CSRD Revealing a New Chapter for Fashion Transparency ]]></title>
+            <link>http://localhost:3000/articles/csrd-revealing-a-new-chapter-for-fashion-transparency</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/csrd-revealing-a-new-chapter-for-fashion-transparency</guid>
+            <pubDate>Sat, 20 Jan 2024 16:58:04 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Protecting Native Bees: Preserving Ecosystems and Agriculture]]></title>
+            <link>http://localhost:3000/articles/native-bee-decline-in-the-united-states-causes-impacts-and-conservation-strategies</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/native-bee-decline-in-the-united-states-causes-impacts-and-conservation-strategies</guid>
+            <pubDate>Fri, 19 Jan 2024 19:17:34 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What makes New Zealand the Green Wonder Down Under?]]></title>
+            <link>http://localhost:3000/articles/what-makes-new-zealand-the-green-wonder-down-under</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/what-makes-new-zealand-the-green-wonder-down-under</guid>
+            <pubDate>Thu, 18 Jan 2024 20:51:18 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Can Corporations Grow Sustainably?]]></title>
+            <link>http://localhost:3000/articles/the-growth-debate</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-growth-debate</guid>
+            <pubDate>Tue, 16 Jan 2024 09:52:55 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[CFO's Guide to Sustainable Business: Voluntary Carbon Market]]></title>
+            <link>http://localhost:3000/articles/what-cfos-must-know-about-vcms-to-access-high-quality-carbon-credits</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/what-cfos-must-know-about-vcms-to-access-high-quality-carbon-credits</guid>
+            <pubDate>Wed, 10 Jan 2024 19:51:13 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A Green Lining: The Promise of Renewable Energy in Post-Conflict Reconstruction]]></title>
+            <link>http://localhost:3000/articles/860-a-green-lining-the-promise-of-renewable-energy-in-post-conflict-reconstruction</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/860-a-green-lining-the-promise-of-renewable-energy-in-post-conflict-reconstruction</guid>
+            <pubDate>Fri, 05 Jan 2024 02:59:55 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Harnessing Algae for Climate Restoration and Sustainable Solutions]]></title>
+            <link>http://localhost:3000/articles/algae-as-a-climate-solution-and-commodity-climate-and-rainforest-restoration-and-food-and-oil-production</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/algae-as-a-climate-solution-and-commodity-climate-and-rainforest-restoration-and-food-and-oil-production</guid>
+            <pubDate>Tue, 26 Dec 2023 06:29:56 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Making a Difference on Climate Through Lobbying]]></title>
+            <link>http://localhost:3000/articles/making-a-difference-on-climate-through-lobbying</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/making-a-difference-on-climate-through-lobbying</guid>
+            <pubDate>Sun, 19 Nov 2023 00:10:48 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Green Hydrogen Breakthrough: Catalyst for Sustainable Energy]]></title>
+            <link>http://localhost:3000/articles/de-carbonizing-the-world-new-green-hydrogen-production-discovery-giving-hope-to-humanity-in-the-race-against-climate-change</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/de-carbonizing-the-world-new-green-hydrogen-production-discovery-giving-hope-to-humanity-in-the-race-against-climate-change</guid>
+            <pubDate>Wed, 15 Nov 2023 15:40:14 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[       Is Hydrogen a Viable Clean Energy Source?]]></title>
+            <link>http://localhost:3000/articles/is-hydrogen-a-viable-clean-energy-source</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/is-hydrogen-a-viable-clean-energy-source</guid>
+            <pubDate>Wed, 01 Nov 2023 20:49:27 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Trophy Hunting: Impact on Climate and Biodiversity Conservation]]></title>
+            <link>http://localhost:3000/articles/the-ecological-and-environmental-impacts-of-trophy-hunting</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-ecological-and-environmental-impacts-of-trophy-hunting</guid>
+            <pubDate>Fri, 13 Oct 2023 22:34:44 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Decarbonizing Transportation: the Elephant and the Mahout]]></title>
+            <link>http://localhost:3000/articles/cleaning-up-cars-the-elephant-and-the-mahout</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/cleaning-up-cars-the-elephant-and-the-mahout</guid>
+            <pubDate>Sat, 07 Oct 2023 17:01:13 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[No Cows? No Problem! The Promise of Cultivated Meat]]></title>
+            <link>http://localhost:3000/articles/no-cows-no-problem-the-promise-of-cultivated-meat</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/no-cows-no-problem-the-promise-of-cultivated-meat</guid>
+            <pubDate>Thu, 28 Sep 2023 16:45:59 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Decarbonization Starts at Home]]></title>
+            <link>http://localhost:3000/articles/decarbonization-starts-at-home</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/decarbonization-starts-at-home</guid>
+            <pubDate>Fri, 25 Aug 2023 16:33:20 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[E-Bikes: Revolutionize Commuting and Reduce Carbon Footprints]]></title>
+            <link>http://localhost:3000/articles/exploring-the-eco-friendly-option-switching-to-an-electric-bike-for-your-commute</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/exploring-the-eco-friendly-option-switching-to-an-electric-bike-for-your-commute</guid>
+            <pubDate>Tue, 22 Aug 2023 09:35:20 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tree Planting: Carbon, Biodiversity, and Land Use Impacts]]></title>
+            <link>http://localhost:3000/articles/is-tree-planting-the-answer</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/is-tree-planting-the-answer</guid>
+            <pubDate>Thu, 06 Jul 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Peatlands, moss farming and the Sustainable Development Goals (SDGs)]]></title>
+            <link>http://localhost:3000/articles/peatlands-moss-farming-and-the-sustainable-development-goals-sdgs</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/peatlands-moss-farming-and-the-sustainable-development-goals-sdgs</guid>
+            <pubDate>Thu, 29 Jun 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[ A sneak peak into a circular economy]]></title>
+            <link>http://localhost:3000/articles/a-sneak-peak-into-a-circular-economy</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/a-sneak-peak-into-a-circular-economy</guid>
+            <pubDate>Mon, 12 Jun 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Climate Change - Obstacle or Opportunity? ]]></title>
+            <link>http://localhost:3000/articles/climate-change-obstacle-or-opportunity</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/climate-change-obstacle-or-opportunity</guid>
+            <pubDate>Sat, 10 Jun 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Climate Change: Uniting for Sustainable Agriculture and Clean Energy]]></title>
+            <link>http://localhost:3000/articles/climate-change-clean-energy-for-environmental-integrity-and-sustainable-food-security</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/climate-change-clean-energy-for-environmental-integrity-and-sustainable-food-security</guid>
+            <pubDate>Mon, 05 Jun 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Case: First green steps for an art startup]]></title>
+            <link>http://localhost:3000/articles/case-first-green-steps-for-an-art-startup</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/case-first-green-steps-for-an-art-startup</guid>
+            <pubDate>Thu, 01 Jun 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Fight Against Climate Change - The India puzzle]]></title>
+            <link>http://localhost:3000/articles/fight-against-climate-change-the-india-puzzle</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/fight-against-climate-change-the-india-puzzle</guid>
+            <pubDate>Mon, 29 May 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A Guide to Climate Action at Your Organization]]></title>
+            <link>http://localhost:3000/articles/a-guide-to-climate-action-at-your-organization-or-startup</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/a-guide-to-climate-action-at-your-organization-or-startup</guid>
+            <pubDate>Wed, 17 May 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Understanding Green Digital Skills and Their Importance on Climate Action
+]]></title>
+            <link>http://localhost:3000/articles/understanding-green-digital-skills-and-their-importance-on-climate-action</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/understanding-green-digital-skills-and-their-importance-on-climate-action</guid>
+            <pubDate>Wed, 17 May 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Green Dilemma: Natural Grass vs. Artificial Turf]]></title>
+            <link>http://localhost:3000/articles/the-problems-of-artificial-turf</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-problems-of-artificial-turf</guid>
+            <pubDate>Fri, 12 May 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Are We Truly Ready for a Fully Electric Vehicle Future?]]></title>
+            <link>http://localhost:3000/articles/are-we-truly-ready-for-a-fully-electric-vehicle-future</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/are-we-truly-ready-for-a-fully-electric-vehicle-future</guid>
+            <pubDate>Wed, 10 May 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Now is the wrong time to build... unless it's built green]]></title>
+            <link>http://localhost:3000/articles/now-is-the-wrong-time-to-build-unless-its-built-green</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/now-is-the-wrong-time-to-build-unless-its-built-green</guid>
+            <pubDate>Wed, 03 May 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Beginners Guide to Voluntary Carbon Markets ]]></title>
+            <link>http://localhost:3000/articles/beginners-guide-to-voluntary-carbon-markets</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/beginners-guide-to-voluntary-carbon-markets</guid>
+            <pubDate>Tue, 25 Apr 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What’s Actually Amazing About Strandberg’s RESQ:D Guitars]]></title>
+            <link>http://localhost:3000/articles/whats-actually-amazing-about-strandbergs-resqd-guitars</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/whats-actually-amazing-about-strandbergs-resqd-guitars</guid>
+            <pubDate>Tue, 25 Apr 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What's the Best Car For Reducing My Carbon Footprint?]]></title>
+            <link>http://localhost:3000/articles/whats-the-best-car-for-reducing-my-carbon-footprint</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/whats-the-best-car-for-reducing-my-carbon-footprint</guid>
+            <pubDate>Tue, 11 Apr 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sustainability: Africa's only hope of hacking the future - A case for printer cartridges remanufacturing in Nigeria]]></title>
+            <link>http://localhost:3000/articles/sustainability-africas-only-hope-of-hacking-the-future-a-case-for-printer-cartridges-remanufacturing-in-nigeria</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/sustainability-africas-only-hope-of-hacking-the-future-a-case-for-printer-cartridges-remanufacturing-in-nigeria</guid>
+            <pubDate>Sun, 09 Apr 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[5 Steps to Pivot Your Career to Sustainability]]></title>
+            <link>http://localhost:3000/articles/5-steps-to-pivot-your-career-to-sustainability</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/5-steps-to-pivot-your-career-to-sustainability</guid>
+            <pubDate>Sat, 08 Apr 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Inside Regenerative Finance: the Crypto Movement Reimagining How We Approach Finance and the Planet]]></title>
+            <link>http://localhost:3000/articles/inside-regenerative-finance-the-crypto-movement-reimagining-how-we-approach-finance-and-the-planet</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/inside-regenerative-finance-the-crypto-movement-reimagining-how-we-approach-finance-and-the-planet</guid>
+            <pubDate>Fri, 07 Apr 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Plastics: An Irreversible Choice]]></title>
+            <link>http://localhost:3000/articles/plastics-an-irreversible-choice</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/plastics-an-irreversible-choice</guid>
+            <pubDate>Fri, 07 Apr 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Real Meat, No Animals Needed]]></title>
+            <link>http://localhost:3000/articles/real-meat-no-animals-needed</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/real-meat-no-animals-needed</guid>
+            <pubDate>Wed, 22 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[And a Little Child Will Lead Them]]></title>
+            <link>http://localhost:3000/articles/and-a-little-child-will-lead-them</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/and-a-little-child-will-lead-them</guid>
+            <pubDate>Fri, 17 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What is Climate Stress Testing]]></title>
+            <link>http://localhost:3000/articles/what-is-climate-stress-testing</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/what-is-climate-stress-testing</guid>
+            <pubDate>Thu, 16 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Exploratory Solar Data Analysis]]></title>
+            <link>http://localhost:3000/articles/exploratory-solar-data-analysis</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/exploratory-solar-data-analysis</guid>
+            <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Upholding Indigenous Rights for Sustainable Fashion ]]></title>
+            <link>http://localhost:3000/articles/indigenous-communities-and-the-fashion-industry-a-call-for-recognition-and-fair-treatment</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/indigenous-communities-and-the-fashion-industry-a-call-for-recognition-and-fair-treatment</guid>
+            <pubDate>Sat, 11 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The 5 Reasons Driving Demand for Climate Consultants in 2023]]></title>
+            <link>http://localhost:3000/articles/the-5-reasons-driving-demand-for-climate-consultants-in-2023</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-5-reasons-driving-demand-for-climate-consultants-in-2023</guid>
+            <pubDate>Fri, 10 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Yes, You Can Have Fun with the Environment]]></title>
+            <link>http://localhost:3000/articles/yes-you-can-have-fun-with-the-environment</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/yes-you-can-have-fun-with-the-environment</guid>
+            <pubDate>Sat, 04 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Consumer behaviour vs climate change: Part 2]]></title>
+            <link>http://localhost:3000/articles/consumer-behaviour-vs-climate-change-part-2</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/consumer-behaviour-vs-climate-change-part-2</guid>
+            <pubDate>Thu, 02 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sustainable Fashion: How Technology is Revolutionizing the Fashion Industry]]></title>
+            <link>http://localhost:3000/articles/sustainable-fashion-and-tech-how-innovation-is-revolutionizing-the-fashion-industry</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/sustainable-fashion-and-tech-how-innovation-is-revolutionizing-the-fashion-industry</guid>
+            <pubDate>Wed, 01 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Can Startups Solve Climate Change]]></title>
+            <link>http://localhost:3000/articles/can-startups-solve-climate-change</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/can-startups-solve-climate-change</guid>
+            <pubDate>Wed, 01 Mar 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Consumer Behaviour vs Climate Change: Part 1]]></title>
+            <link>http://localhost:3000/articles/consumer-behaviour-vs-climate-change-part-1</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/consumer-behaviour-vs-climate-change-part-1</guid>
+            <pubDate>Thu, 23 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sustainability and Spirituality]]></title>
+            <link>http://localhost:3000/articles/sustainability-and-spirituality</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/sustainability-and-spirituality</guid>
+            <pubDate>Mon, 20 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Why You Should Build in Climate]]></title>
+            <link>http://localhost:3000/articles/why-you-should-build-in-climate</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/why-you-should-build-in-climate</guid>
+            <pubDate>Sun, 19 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How Much Bread is Thrown Away in the United States?]]></title>
+            <link>http://localhost:3000/articles/how-much-bread-is-thrown-away-in-the-united-states</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/how-much-bread-is-thrown-away-in-the-united-states</guid>
+            <pubDate>Tue, 14 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Financing Green Projects]]></title>
+            <link>http://localhost:3000/articles/financing-green-projects</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/financing-green-projects</guid>
+            <pubDate>Mon, 13 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[ESG - The Framework of Green Economic Security]]></title>
+            <link>http://localhost:3000/articles/esg-the-framework-of-green-economic-security</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/esg-the-framework-of-green-economic-security</guid>
+            <pubDate>Mon, 13 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What is the Corporate Sustainability Reporting Directive (CSRD)]]></title>
+            <link>http://localhost:3000/articles/what-is-the-corporate-sustainability-reporting-directive-csrd</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/what-is-the-corporate-sustainability-reporting-directive-csrd</guid>
+            <pubDate>Mon, 13 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Hydrogen Ships: A Spark of Hope for Maritime Trade]]></title>
+            <link>http://localhost:3000/articles/hydrogen-ships-a-spark-of-hope-for-maritime-trade</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/hydrogen-ships-a-spark-of-hope-for-maritime-trade</guid>
+            <pubDate>Sat, 11 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[10 Environmental Sustainability Actions That Aren't About Turning off the Lights]]></title>
+            <link>http://localhost:3000/articles/10-environmental-sustainability-actions-that-arent-about-turning-off-the-lights</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/10-environmental-sustainability-actions-that-arent-about-turning-off-the-lights</guid>
+            <pubDate>Fri, 10 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Chitosan: The Crustacean's Polymer]]></title>
+            <link>http://localhost:3000/articles/chitosan-the-crustaceans-polymer</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/chitosan-the-crustaceans-polymer</guid>
+            <pubDate>Wed, 08 Feb 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tackling Marine Eutrophication Through Reducing Nitrogen Load in Agricultural Runoff]]></title>
+            <link>http://localhost:3000/articles/tackling-marine-eutrophication-through-reducing-nitrogen-load-in-agricultural-runoff</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/tackling-marine-eutrophication-through-reducing-nitrogen-load-in-agricultural-runoff</guid>
+            <pubDate>Mon, 23 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Direct Air Capture – Reducing Arctic Warming Through CO2 Capture and Storage]]></title>
+            <link>http://localhost:3000/articles/direct-air-capture-reducing-arctic-warming-through-co2-capture-and-storage</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/direct-air-capture-reducing-arctic-warming-through-co2-capture-and-storage</guid>
+            <pubDate>Mon, 23 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Restoring Fire in California Through Western Fire Science and Traditional Ecological Knowledge]]></title>
+            <link>http://localhost:3000/articles/restoring-fire-in-california-through-western-fire-science-and-traditional-ecological-knowledge</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/restoring-fire-in-california-through-western-fire-science-and-traditional-ecological-knowledge</guid>
+            <pubDate>Mon, 23 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[2022 Marked a Breakthrough for Renewables  ]]></title>
+            <link>http://localhost:3000/articles/2022-marked-a-breakthrough-for-renewables</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/2022-marked-a-breakthrough-for-renewables</guid>
+            <pubDate>Fri, 20 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Tropical Matrix: Resurrections]]></title>
+            <link>http://localhost:3000/articles/the-tropical-matrix-resurrections</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-tropical-matrix-resurrections</guid>
+            <pubDate>Wed, 18 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Holy Grail of Clean Energy: Can Nuclear Fusion One Day Power Our Electrical Grid?]]></title>
+            <link>http://localhost:3000/articles/the-holy-grail-of-clean-energy-can-nuclear-fusion-one-day-power-our-electrical-grid</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-holy-grail-of-clean-energy-can-nuclear-fusion-one-day-power-our-electrical-grid</guid>
+            <pubDate>Thu, 12 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Green for Green.]]></title>
+            <link>http://localhost:3000/articles/green-for-green</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/green-for-green</guid>
+            <pubDate>Wed, 11 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tips to Save Water at Home]]></title>
+            <link>http://localhost:3000/articles/tips-to-save-water-at-home</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/tips-to-save-water-at-home</guid>
+            <pubDate>Wed, 04 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Go Gently – Consider Green Burial]]></title>
+            <link>http://localhost:3000/articles/go-gently-consider-green-burial</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/go-gently-consider-green-burial</guid>
+            <pubDate>Sat, 31 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Software is Heating the World]]></title>
+            <link>http://localhost:3000/articles/software-is-heating-the-world</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/software-is-heating-the-world</guid>
+            <pubDate>Fri, 16 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[22 things to know about EV charging before buying your first electric vehicle]]></title>
+            <link>http://localhost:3000/articles/22-things-to-know-about-ev-charging-before-buying-your-first-electric-vehicle</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/22-things-to-know-about-ev-charging-before-buying-your-first-electric-vehicle</guid>
+            <pubDate>Thu, 15 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Charging Happens at Home]]></title>
+            <link>http://localhost:3000/articles/charging-happens-at-home</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/charging-happens-at-home</guid>
+            <pubDate>Thu, 15 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Making a Career Shift into Climate Technology]]></title>
+            <link>http://localhost:3000/articles/making-a-career-shift-into-climate-technology</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/making-a-career-shift-into-climate-technology</guid>
+            <pubDate>Thu, 15 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Three B Corp Veterans Launch New Social Impact Reporting Platform for Small Business]]></title>
+            <link>http://localhost:3000/articles/three-b-corp-veterans-launch-new-social-impact-reporting-platform-for-small-business</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/three-b-corp-veterans-launch-new-social-impact-reporting-platform-for-small-business</guid>
+            <pubDate>Tue, 13 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Beware This Slippery Chemical]]></title>
+            <link>http://localhost:3000/articles/beware-this-slippery-chemical</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/beware-this-slippery-chemical</guid>
+            <pubDate>Sat, 10 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Role of Renewable Energy In Increasing Energy  Access in Africa]]></title>
+            <link>http://localhost:3000/articles/the-role-of-renewable-energy-in-increasing-energy-access-in-africa</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-role-of-renewable-energy-in-increasing-energy-access-in-africa</guid>
+            <pubDate>Wed, 07 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Results of the COP 27]]></title>
+            <link>http://localhost:3000/articles/results-of-the-cop-27</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/results-of-the-cop-27</guid>
+            <pubDate>Wed, 07 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Iceland's Environmental Challenges]]></title>
+            <link>http://localhost:3000/articles/icelands-environmental-challenges</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/icelands-environmental-challenges</guid>
+            <pubDate>Sun, 04 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Time to Rebundle the REC]]></title>
+            <link>http://localhost:3000/articles/time-to-rebundle-the-rec</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/time-to-rebundle-the-rec</guid>
+            <pubDate>Fri, 02 Dec 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What Would the SEC's Proposed Reporting Changes Mean for Sustainable Fund Managers?]]></title>
+            <link>http://localhost:3000/articles/what-would-the-secs-proposed-reporting-changes-mean-for-sustainable-fund-managers</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/what-would-the-secs-proposed-reporting-changes-mean-for-sustainable-fund-managers</guid>
+            <pubDate>Mon, 28 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Impact of Digital Marketing on Climate Change.]]></title>
+            <link>http://localhost:3000/articles/the-impact-of-digital-marketing-on-climate-change</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-impact-of-digital-marketing-on-climate-change</guid>
+            <pubDate>Tue, 22 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Canada's Investments in Renewable Energy]]></title>
+            <link>http://localhost:3000/articles/canadas-investments-in-renewable-energy</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/canadas-investments-in-renewable-energy</guid>
+            <pubDate>Wed, 16 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What your Business Needs to Know about Carbon Offsets]]></title>
+            <link>http://localhost:3000/articles/what-your-business-needs-to-know-about-carbon-offsets</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/what-your-business-needs-to-know-about-carbon-offsets</guid>
+            <pubDate>Tue, 15 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Impact of Melting Ice Caps]]></title>
+            <link>http://localhost:3000/articles/the-impact-of-melting-ice-caps</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-impact-of-melting-ice-caps</guid>
+            <pubDate>Thu, 10 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Finding Jobs on LinkedIn that Fight Climate Change]]></title>
+            <link>http://localhost:3000/articles/finding-jobs-on-linkedin-that-fight-climate-change</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/finding-jobs-on-linkedin-that-fight-climate-change</guid>
+            <pubDate>Mon, 07 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Where Are You on Your Climate Journey?]]></title>
+            <link>http://localhost:3000/articles/where-are-you-on-your-climate-journey</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/where-are-you-on-your-climate-journey</guid>
+            <pubDate>Fri, 04 Nov 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Looking Downstream: Economic and Environmental Considerations of Hydroelectric Dams]]></title>
+            <link>http://localhost:3000/articles/looking-downstream-economic-and-environmental-considerations-of-hydroelectric-dams</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/looking-downstream-economic-and-environmental-considerations-of-hydroelectric-dams</guid>
+            <pubDate>Mon, 31 Oct 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What the Inflation Reduction Act Means for Climate Change]]></title>
+            <link>http://localhost:3000/articles/what-the-inflation-reduction-act-means-for-climate-change</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/what-the-inflation-reduction-act-means-for-climate-change</guid>
+            <pubDate>Wed, 19 Oct 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Climate Tech Gets Ready for Takeoff]]></title>
+            <link>http://localhost:3000/articles/climate-tech-gets-ready-for-takeoff</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/climate-tech-gets-ready-for-takeoff</guid>
+            <pubDate>Tue, 11 Oct 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How Tokenised Carbon Credits Could Help Advance Climate Solutions ]]></title>
+            <link>http://localhost:3000/articles/how-tokenised-carbon-credits-could-help-advance-climate-solutions</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/how-tokenised-carbon-credits-could-help-advance-climate-solutions</guid>
+            <pubDate>Thu, 02 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Feasibility and Future of Carbon Capture Technology]]></title>
+            <link>http://localhost:3000/articles/the-feasibility-and-future-of-carbon-capture-technology</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/the-feasibility-and-future-of-carbon-capture-technology</guid>
+            <pubDate>Thu, 02 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Ignoring the Apocalypse]]></title>
+            <link>http://localhost:3000/articles/ignoring-the-apocalypse</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/ignoring-the-apocalypse</guid>
+            <pubDate>Sun, 22 May 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How the Russia-Ukraine Conflict Is Accelerating the European Union’s Adoption of Renewables]]></title>
+            <link>http://localhost:3000/articles/how-the-russia-ukraine-conflict-is-accelerating-the-european-unions-adoption-of-renewables</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/how-the-russia-ukraine-conflict-is-accelerating-the-european-unions-adoption-of-renewables</guid>
+            <pubDate>Tue, 12 Apr 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Poisoning our Children]]></title>
+            <link>http://localhost:3000/articles/poisoning-our-children</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/poisoning-our-children</guid>
+            <pubDate>Wed, 09 Feb 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Pros and Cons of Algae Biofuel]]></title>
+            <link>http://localhost:3000/articles/pros-and-cons-of-algae-biofuel</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/pros-and-cons-of-algae-biofuel</guid>
+            <pubDate>Mon, 24 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Low-Methane Cows]]></title>
+            <link>http://localhost:3000/articles/low-methane-cows</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/low-methane-cows</guid>
+            <pubDate>Mon, 17 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How the Biden Administration Could Help Transform Clean Energy]]></title>
+            <link>http://localhost:3000/articles/how-the-biden-administration-could-help-transform-clean-energy</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/how-the-biden-administration-could-help-transform-clean-energy</guid>
+            <pubDate>Fri, 14 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Future of Auto Innovation: Yamaha's Electric Motor Breakthrough]]></title>
+            <link>http://localhost:3000/articles/new-powerful-electric-motors-from-yamaha-to-revolutionize-mobility-in-coming-decade</link>
+            <guid isPermaLink="true">http://localhost:3000/articles/new-powerful-electric-motors-from-yamaha-to-revolutionize-mobility-in-coming-decade</guid>
+            <pubDate>Tue, 11 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

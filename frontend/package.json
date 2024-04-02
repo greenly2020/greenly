@@ -41,6 +41,7 @@
     "draftjs-to-html": "^0.9.1",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "feed": "^4.2.2",
     "firebase": "^10.0.0",
     "firebase-admin": "^11.9.0",
     "graphql": "^15.5.0",
