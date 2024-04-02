@@ -8,9 +8,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Greenly</title>
+        <title>Greenly - Front page of the green revolution</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Front page of the green revolution" />
+        <meta
+          name="description"
+          content="Greenly - Front page of the green revolution"
+        />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={`/`} key="canonical" />
       </Head>
