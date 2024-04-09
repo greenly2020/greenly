@@ -2,7 +2,13 @@ import React, { useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { EditorState, convertToRaw, convertFromRaw, Entity } from 'draft-js';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import { MenuItem, TextField, Container, Typography, Link } from '@mui/material';
+import {
+  MenuItem,
+  TextField,
+  Container,
+  Typography,
+  Link,
+} from '@mui/material';
 import { useQuery } from '@apollo/client';
 import dynamic from 'next/dynamic';
 
@@ -29,9 +35,12 @@ import { useUpdateArticleMutation } from '../article/graphql/mutation/__generate
 import { useGetUsersQuery } from '../user/graphql/query/__generated__/getUsers';
 import { GetArticlesListDocument } from '../articles/graphql/query/__generated__/getArticlesList';
 
-const DynamicEditor = dynamic(() => import('react-draft-wysiwyg').then(mod => mod.Editor), {
-  ssr: false,
-});
+const DynamicEditor = dynamic(
+  () => import('react-draft-wysiwyg').then((mod) => mod.Editor),
+  {
+    ssr: false,
+  }
+);
 
 function ArticleEditor() {
   const { push, query, isReady } = useRouter();
@@ -45,11 +54,14 @@ function ArticleEditor() {
 
   const [dialogTitle, setDialogTitle] = useState<string>('');
   const [dialogBody, setDialogBody] = useState<string>('');
-  const [redirectionLocation, setRedirectionLocation] = useState<string | null>(null);
+  const [redirectionLocation, setRedirectionLocation] = useState<string | null>(
+    null
+  );
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
   const [initAbstractUrl, setInitAbstractUrl] = useState<string[]>([]);
   const [initBodyUrl, setInitBodyUrl] = useState<string[]>([]);
-  const [prevArticleImagesRef, setPrevArticleImagesRef] = useState<StorageReference | null>(null);
+  const [prevArticleImagesRef, setPrevArticleImagesRef] =
+    useState<StorageReference | null>(null);
 
   const storage = getStorage();
 
@@ -85,17 +97,22 @@ function ArticleEditor() {
 
   const [isUploading, setIsUploading] = useState(false);
 
-  const editingPermitted = query?.article && (query?.author === me?.id || isAdmin);
+  const editingPermitted =
+    query?.article && (query?.author === me?.id || isAdmin);
   useQuery(GetArticleDocument, {
-    onCompleted: data => {
+    onCompleted: (data) => {
       const articleData = data?.article?.data?.attributes as Article;
       const abstract = JSON.parse(articleData?.abstract || '{}');
       const articleBody = JSON.parse(articleData?.articleBody || '{}');
       const blocksFromAbstract = convertFromRaw(abstract);
       const blocksFromBody = convertFromRaw(articleBody);
-      const abstractUrl = Object.values(abstract?.entityMap)?.map((item: any) => item?.data?.src);
+      const abstractUrl = Object.values(abstract?.entityMap)?.map(
+        (item: any) => item?.data?.src
+      );
       setInitAbstractUrl(abstractUrl);
-      const articleBodyUrl = Object.values(articleBody?.entityMap)?.map((item: any) => item?.data?.src);
+      const articleBodyUrl = Object.values(articleBody?.entityMap)?.map(
+        (item: any) => item?.data?.src
+      );
       setInitBodyUrl(articleBodyUrl);
       setEditorStateAbstract(EditorState.createWithContent(blocksFromAbstract));
       setEditorStateBody(EditorState.createWithContent(blocksFromBody));
@@ -141,15 +158,21 @@ function ArticleEditor() {
   };
 
   const articleAuthor =
-    isAdmin && authorByAdmin ? authorByAdmin : authorId ? authorId : (query?.author as string) || me?.id;
+    isAdmin && authorByAdmin
+      ? authorByAdmin
+      : authorId
+        ? authorId
+        : (query?.author as string) || me?.id;
 
   const deleteOldArticleImages = (initUrl: string[], isBody?: boolean) => {
     const blocks = isBody
       ? convertToRaw(editorStateBody.getCurrentContent())
       : convertToRaw(editorStateAbstract.getCurrentContent());
-    const urls = Object.values(blocks?.entityMap)?.map((item: any) => item?.data?.src);
-    initUrl?.forEach(item => {
-      if (!urls.some(url => url === item)) {
+    const urls = Object.values(blocks?.entityMap)?.map(
+      (item: any) => item?.data?.src
+    );
+    initUrl?.forEach((item) => {
+      if (!urls.some((url) => url === item)) {
         console.log('debug > blocks===', item);
       }
     });
@@ -165,8 +188,12 @@ function ArticleEditor() {
 
     const articleData = {
       title: articleTitle,
-      abstract: JSON.stringify(convertToRaw(editorStateAbstract.getCurrentContent())),
-      articleBody: JSON.stringify(convertToRaw(editorStateBody.getCurrentContent())),
+      abstract: JSON.stringify(
+        convertToRaw(editorStateAbstract.getCurrentContent())
+      ),
+      articleBody: JSON.stringify(
+        convertToRaw(editorStateBody.getCurrentContent())
+      ),
       category,
       dateCreated,
       headerImage: imageExists(headerURL),
@@ -186,12 +213,17 @@ function ArticleEditor() {
       setDialogBody('Please choose an Author then try again');
       setIsDialogOpen(true);
       return false;
-    } else if (JSON.stringify(convertToRaw(editorStateAbstract.getCurrentContent())) === '') {
+    } else if (
+      JSON.stringify(convertToRaw(editorStateAbstract.getCurrentContent())) ===
+      ''
+    ) {
       setDialogTitle('Form Error');
       setDialogBody('Please enter an abstract then try again');
       setIsDialogOpen(true);
       return false;
-    } else if (JSON.stringify(convertToRaw(editorStateBody.getCurrentContent())) === '') {
+    } else if (
+      JSON.stringify(convertToRaw(editorStateBody.getCurrentContent())) === ''
+    ) {
       setDialogTitle('Form Error');
       setDialogBody('Please enter an article body then try again');
       setIsDialogOpen(true);
@@ -235,8 +267,12 @@ function ArticleEditor() {
     () => ({
       id: '0',
       title: articleTitle,
-      abstract: JSON.stringify(convertToRaw(editorStateAbstract.getCurrentContent())),
-      articleBody: JSON.stringify(convertToRaw(editorStateBody.getCurrentContent())),
+      abstract: JSON.stringify(
+        convertToRaw(editorStateAbstract.getCurrentContent())
+      ),
+      articleBody: JSON.stringify(
+        convertToRaw(editorStateBody.getCurrentContent())
+      ),
       dateCreated: dateCreated,
       readTime: Number(readTime),
       headerImage: headerURL,
@@ -247,7 +283,8 @@ function ArticleEditor() {
           id: articleAuthor,
           attributes:
             isAdmin && authorByAdmin
-              ? usersData?.find(user => user?.id === authorByAdmin)?.attributes
+              ? usersData?.find((user) => user?.id === authorByAdmin)
+                  ?.attributes
               : {
                   name: authorName || me?.name || 'name',
                   profileLink: me?.profileLink,
@@ -275,14 +312,17 @@ function ArticleEditor() {
   const deleteExistingHeaderImage = async (reference: StorageReference) => {
     const files = await getFilesByReference(reference);
 
-    files.items.forEach(file => {
+    files.items.forEach((file) => {
       const fileRef = ref(storage, file.fullPath);
       deleteFileByReference(fileRef);
     });
   };
   const formData = new FormData();
 
-  const handleUpdateHeaderImage = async (event: React.ChangeEvent<HTMLInputElement>, author: string) => {
+  const handleUpdateHeaderImage = async (
+    event: React.ChangeEvent<HTMLInputElement>,
+    author: string
+  ) => {
     const imagePath = `Images/Article/${author}/${Date.now()}`;
     const articleImagesRef = ref(storage, imagePath);
     if (event.target.files) {
@@ -309,7 +349,9 @@ function ArticleEditor() {
         const blob = await getBlob(prevArticleImagesRef as StorageReference);
         await uploadFile(articleImagesRef, blob);
         // TODO Add here mutation for delete image by url - for ADMIN only
-        await deleteExistingHeaderImage(prevArticleImagesRef as StorageReference);
+        await deleteExistingHeaderImage(
+          prevArticleImagesRef as StorageReference
+        );
         const url = await getFileUrl(articleImagesRef);
         setPrevArticleImagesRef(articleImagesRef);
 
@@ -374,7 +416,12 @@ function ArticleEditor() {
 
   return (
     <ArticleEditorContainer>
-      <Dialog open={isDialogOpen} handleClose={handleDialogClose} title={dialogTitle} body={dialogBody} />
+      <Dialog
+        open={isDialogOpen}
+        handleClose={handleDialogClose}
+        title={dialogTitle}
+        body={dialogBody}
+      />
       <Container maxWidth="sm" style={{ marginBottom: '75px' }}>
         <div className={'headerBox'}>
           <Typography className={'articleHeader'} variant={'h1'}>
@@ -403,7 +450,9 @@ function ArticleEditor() {
             style={{ display: 'none' }}
             id="raised-button-file"
             type="file"
-            onChange={event => handleUpdateHeaderImage(event, articleAuthor as string)}
+            onChange={(event) =>
+              handleUpdateHeaderImage(event, articleAuthor as string)
+            }
             disabled={isUploading}
           />
           <label htmlFor="raised-button-file">
@@ -423,7 +472,12 @@ function ArticleEditor() {
             </Button>
           </label>
           <br />
-          <Link href={headerURL} target="_blank" underline="hover" fontSize="14px">
+          <Link
+            href={headerURL}
+            target="_blank"
+            underline="hover"
+            fontSize="14px"
+          >
             {headerURL}
           </Link>
         </div>
@@ -437,16 +491,24 @@ function ArticleEditor() {
                 select
                 label="Author"
                 value={authorByAdmin}
-                onChange={event => {
-                  handleAuthorByAdminChange(event as React.ChangeEvent<HTMLInputElement>);
-                  handleUpdateHeaderImage(event as React.ChangeEvent<HTMLInputElement>, event.target.value as string);
+                onChange={(event) => {
+                  handleAuthorByAdminChange(
+                    event as React.ChangeEvent<HTMLInputElement>
+                  );
+                  handleUpdateHeaderImage(
+                    event as React.ChangeEvent<HTMLInputElement>,
+                    event.target.value as string
+                  );
                 }}
                 helperText="Please select article's author"
                 variant="outlined"
                 disabled={Boolean(query?.author)}
               >
-                {usersData?.map(user => (
-                  <MenuItem key={user?.attributes?.profileLink} value={user?.id as string}>
+                {usersData?.map((user) => (
+                  <MenuItem
+                    key={user?.attributes?.profileLink}
+                    value={user?.id as string}
+                  >
                     {user?.attributes?.name}
                     {/* TODO add email for old users */}
                     {/* {user?.attributes?.email?.includes('###old###') ? ' - old account' : ''} */}
@@ -467,7 +529,7 @@ function ArticleEditor() {
               helperText="Please select your article's category"
               variant="outlined"
             >
-              {CATEGORIES.map(option => (
+              {CATEGORIES.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
@@ -475,7 +537,10 @@ function ArticleEditor() {
             </TextField>
           </div>
           <div className={'inputBox'}>
-            <Typography className={'inputText'}> Approximate Read Time: </Typography>
+            <Typography className={'inputText'}>
+              {' '}
+              Approximate Read Time:{' '}
+            </Typography>
             <TextField
               id="filled-select-currency"
               fullWidth
@@ -486,7 +551,7 @@ function ArticleEditor() {
               helperText="Please select your article's read time"
               variant="outlined"
             >
-              {READ_TIMES.map(option => (
+              {READ_TIMES.map((option) => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>
@@ -494,10 +559,23 @@ function ArticleEditor() {
             </TextField>
           </div>
         </div>
-        <Typography className={'inputText'}> Article Abstract (optional, max 500 words): </Typography>
+        <Typography className={'inputText'}>
+          {' '}
+          Article Abstract (optional, max 500 words):{' '}
+        </Typography>
         <DynamicEditor
           toolbar={{
-            options: ['inline', 'blockType', 'fontSize', 'list', 'textAlign', 'link', 'image', 'remove', 'history'],
+            options: [
+              'inline',
+              'blockType',
+              'fontSize',
+              'list',
+              'textAlign',
+              'link',
+              'image',
+              'remove',
+              'history',
+            ],
             // TODO: Add correct fontFamily
             fontFamily: {
               options: ['sans-serif'],
@@ -519,10 +597,23 @@ function ArticleEditor() {
           customStyleMap={styleMap}
           spellCheck
         />
-        <Typography className={'inputText'}> Article Body (max 3000): </Typography>
+        <Typography className={'inputText'}>
+          {' '}
+          Article Body (max 3000):{' '}
+        </Typography>
         <DynamicEditor
           toolbar={{
-            options: ['inline', 'blockType', 'fontSize', 'list', 'textAlign', 'link', 'image', 'remove', 'history'],
+            options: [
+              'inline',
+              'blockType',
+              'fontSize',
+              'list',
+              'textAlign',
+              'link',
+              'image',
+              'remove',
+              'history',
+            ],
             // TODO: Add correct fontFamily
             fontFamily: {
               options: ['sans-serif'],
@@ -548,7 +639,12 @@ function ArticleEditor() {
       </Container>
       <ArticleBody article={{ id: previewData?.id, attributes: previewData }} />
       <div className={'footerBox'}>
-        <Button onClick={() => submit()} variant="primary" label="Submit" component="button">
+        <Button
+          onClick={() => submit()}
+          variant="primary"
+          label="Submit"
+          component="button"
+        >
           Submit
         </Button>
       </div>
