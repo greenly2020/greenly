@@ -83,5 +83,8 @@
     "deepmerge": "^4.3.1",
     "graphql-codegen-apollo-next-ssr": "^1.7.4",
     "prettier": "^3.0.0"
+  },
+  "overrides": {
+    "@parcel/watcher": "2.1.0"
   }
 }
