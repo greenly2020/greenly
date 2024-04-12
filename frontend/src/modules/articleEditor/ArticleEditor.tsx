@@ -161,8 +161,8 @@ function ArticleEditor() {
     isAdmin && authorByAdmin
       ? authorByAdmin
       : authorId
-        ? authorId
-        : (query?.author as string) || me?.id;
+      ? authorId
+      : (query?.author as string) || me?.id;
 
   const deleteOldArticleImages = (initUrl: string[], isBody?: boolean) => {
     const blocks = isBody
@@ -171,11 +171,6 @@ function ArticleEditor() {
     const urls = Object.values(blocks?.entityMap)?.map(
       (item: any) => item?.data?.src
     );
-    initUrl?.forEach((item) => {
-      if (!urls.some((url) => url === item)) {
-        console.log('debug > blocks===', item);
-      }
-    });
   };
 
   const submit = () => {

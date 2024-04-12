@@ -31,7 +31,6 @@ export const getStaticProps = async () => {
 };
 
 export default function Home() {
-  console.log('debug > process.env.BASE_URL===', process.env.BASE_URL);
   return (
     <>
       <Head>
