@@ -28,7 +28,7 @@ function ShareButton({ url, title }: ShareButtonProps) {
         .then((data) => console.log('Shared successfully!', data))
         .catch((error) => console.error('Error sharing:', error));
     } else {
-      setShareLink(`${process.env.BASE_URL}articles/${url}`);
+      setShareLink(`${process.env.BASE_URL}/articles/${url}`);
     }
   };
 
