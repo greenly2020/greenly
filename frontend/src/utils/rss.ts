@@ -26,7 +26,6 @@ export default async function generateRssFeed(allArticles: ArticleEntity[]) {
 
   // Add each individual article to the feed.
   allArticles.map((article) => {
-    console.log('debug > site_url===', site_url);
     feed.addItem({
       title: article.attributes?.title || '',
       description: article.attributes?.abstract || '',
