@@ -31,7 +31,7 @@ export default async function generateRssFeed(allArticles: ArticleEntity[]) {
       description: article.attributes?.abstract || '',
       id: `${site_url}/articles/${article.attributes?.articleLink}`,
       link: `${site_url}/articles/${article.attributes?.articleLink}`,
-      date: article.attributes?.dateCreated,
+      date: new Date(article.attributes?.dateCreated),
       author: [
         {
           link:
