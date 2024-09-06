@@ -4,9 +4,9 @@ import { forwardRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { getCDNUrl } from '@/modules/firebase/services/storage/storage';
 import { theme } from '@/styles/theme';
 import { Author } from '@/modules/about/team/Team';
+import { formatProfileLink } from '@/uiCore/utils/utils';
 
 export interface IAuthorCardProps {
   variant: 'primary' | 'secondary';
@@ -14,7 +14,7 @@ export interface IAuthorCardProps {
   data: Author;
 }
 
-export const AuthorCard = forwardRef<HTMLElement, IAuthorCardProps>((props, ref) => {
+export const AuthorCard = forwardRef<HTMLElement, IAuthorCardProps>((props) => {
   const { size } = props;
   const { data } = props;
 
@@ -22,67 +22,71 @@ export const AuthorCard = forwardRef<HTMLElement, IAuthorCardProps>((props, ref)
     return null;
   }
 
-  const cdnUrl =
-    data.profilePicture && data.profilePicture?.includes('appspot.com')
-      ? getCDNUrl(data.profilePicture, 90, 90)
-      : data.profilePicture
-      ? data.profilePicture
-      : 'https://picsum.photos/id/11/90/90';
+  const profileLink = formatProfileLink(data.profileLink || '');
   return (
-    <Grid color={theme.palette.green.accentLight} item xs={12} sm={6} lg={size} data-testid={`authorCard-${data.id}`}>
+    <Grid
+      color={theme.palette.green.accentLight}
+      item
+      xs={12}
+      sm={6}
+      lg={size}
+      data-testid={`authorCard-${data.id}`}
+    >
       <Card elevation={5} style={{ borderRadius: '10px' }}>
         <CardContent>
           <Grid container spacing={2}>
             <Grid item xs={8}>
-              <Typography
-                variant="h2"
-                fontSize="30px"
-                color={theme.palette.green.primary}
-                fontFamily={theme.typography.fontFamily}
-                fontWeight={theme.typography.fontWeightMedium}
-                mb="10px"
+              <Link
+                href={profileLink || '/'}
+                style={{
+                  color: 'inherit',
+                }}
               >
-                <Link
-                  href={`/user/${String(data.profileLink)}`}
-                  style={{
-                    color: 'inherit',
-                  }}
+                <Typography
+                  variant="h2"
+                  fontSize="30px"
+                  color={theme.palette.green.primary}
+                  fontFamily={theme.typography.fontFamily}
+                  fontWeight={theme.typography.fontWeightMedium}
+                  mb="10px"
                 >
                   {data.name}
-                </Link>
-              </Typography>
+                </Typography>
+              </Link>
 
-              <Typography
-                variant="body2"
-                color={theme.palette.green.primary}
-                fontFamily={theme.typography.fontFamily}
-                fontWeight={theme.typography.fontWeightMedium}
-              >
-                <Link href={`/user/${String(data.profileLink)}`} style={{ color: 'inherit' }}>
+              <Link href={profileLink || '/'} style={{ color: 'inherit' }}>
+                <Typography
+                  variant="body2"
+                  color={theme.palette.green.primary}
+                  fontFamily={theme.typography.fontFamily}
+                  fontWeight={theme.typography.fontWeightMedium}
+                >
                   @{data.displayName}
-                </Link>
-              </Typography>
+                </Typography>
+              </Link>
             </Grid>
 
             <Grid item xs={4}>
-              <Link href={`/user/${String(data.profileLink)}`} style={{ color: 'inherit' }}>
-                <CardMedia
-                  sx={{
-                    width: '90px',
-                    height: '90px',
-                    position: 'relative',
-                  }}
-                >
+              <CardMedia
+                sx={{
+                  width: '90px',
+                  height: '90px',
+                  position: 'relative',
+                }}
+              >
+                <Link href={profileLink || '/'} style={{ color: 'inherit' }}>
                   <Image
-                    src={data.profilePicture ?? 'https://picsum.photos/id/11/90/90'}
+                    src={
+                      data.profilePicture ?? 'https://picsum.photos/id/11/90/90'
+                    }
                     alt={`Author profile picture`}
                     fill={true}
                     priority={true}
                     sizes="90px"
                     style={{ objectFit: 'cover', borderRadius: '50%' }}
                   />
-                </CardMedia>
-              </Link>
+                </Link>
+              </CardMedia>
             </Grid>
           </Grid>
 

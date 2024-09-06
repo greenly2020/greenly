@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-import { Box, Grid, Container, LinearProgress, Typography } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Container,
+  LinearProgress,
+  Typography,
+} from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 import { ArticleEntity } from '@/__generated__/types';
 import { ArticleCard } from '@/uiCore';
@@ -43,7 +49,12 @@ export default function Articles() {
 
     if (currentData.length > 0) {
       const articles = currentData?.map((article: ArticleEntity) => {
-        return <ArticleCard key={article?.id ? article.id : Math.random().toString()} cardData={article} />;
+        return (
+          <ArticleCard
+            key={article?.id ? article.id : Math.random().toString()}
+            cardData={article}
+          />
+        );
       });
       setArticles(articles);
     }
@@ -66,6 +77,9 @@ export default function Articles() {
   return articles ? (
     <StyledArticlesContainer>
       <Container maxWidth="xl">
+        <Typography component="h1" display="none">
+          Greenly - Front page of the green revolution.
+        </Typography>
         <Box pb={3}>
           {articles?.length === 0 && (
             <Typography variant={'h3'} className={'errorText'}>
@@ -77,7 +91,12 @@ export default function Articles() {
           </Grid>
         </Box>
         <div className={'buttonHolder'}>
-          <Pagination size="large" count={maxPage} page={currentPage} onChange={handleChange} />
+          <Pagination
+            size="large"
+            count={maxPage}
+            page={currentPage}
+            onChange={handleChange}
+          />
         </div>
       </Container>
     </StyledArticlesContainer>

@@ -3,19 +3,19 @@ import { CATEGORIES } from '@/modules/articleEditor/constants';
 import TopArticles from '@/modules/articles/TopArticles';
 import { Browse } from '@/modules/browse';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 
 export const BrowseCategoryPage = () => {
-  const { isReady, push, query } = useRouter();
+  const { push, query } = useRouter();
   const category = query.category as string;
-  const activeCategory = CATEGORIES.find(cat => cat.value === category);
+  const activeCategory = CATEGORIES?.find((cat) => cat.value === category);
 
-  if (isReady && !activeCategory) {
+  if (typeof window !== 'undefined' && !activeCategory) {
     push('/');
     return null;
   }
 
-  return (
+  return activeCategory ? (
     <>
       <Head>
         <title>{activeCategory?.label || 'Greenly'}</title>
@@ -30,7 +30,7 @@ export const BrowseCategoryPage = () => {
         </>
       </MainLayout>
     </>
-  );
+  ) : null;
 };
 
 export default BrowseCategoryPage;

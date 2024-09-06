@@ -4,7 +4,7 @@ import { Container, LinearProgress, Typography } from '@mui/material';
 
 import { UserProfile } from '@/modules/user';
 import { MainLayout } from '@/layout/MainLayout';
-import { useProfile } from '@/modules/hooks/useProfile';
+import { UserProfileType, useProfile } from '@/modules/hooks/useProfile';
 import { GetServerSideProps } from 'next';
 import { apolloClientServer } from '@/api/apolloClientServer';
 import { GetUsersDocument } from '@/modules/user/graphql/query/__generated__/getUsers';
@@ -14,44 +14,24 @@ interface userDataProp {
   bio?: string;
 }
 
-export const UserPage = ({ userData }: { userData: userDataProp }) => {
-  const { query } = useRouter();
-
-  const link = query.profileLink as string;
-
-  const { error, loading, user } = useProfile(link);
-
-  if (error) {
-    return (
-      <Container maxWidth="sm">
-        <Typography> Something went wrong please try again. </Typography>
-      </Container>
-    );
-  }
-
-  if (loading) {
-    return <LinearProgress color="secondary" />;
-  }
-
-  if (!user) {
-    return (
-      <div>
-        <Typography> The user you are looking for does not exist. Please try a new one. </Typography>
-      </div>
-    );
-  }
-
+export const UserPage = ({
+  userData,
+  profileLink,
+}: {
+  userData: userDataProp;
+  profileLink: string;
+}) => {
   return (
     <>
       <Head>
         <title>{userData?.name || 'Greenly'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={userData?.bio || ''} />
-
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={`/user/${profileLink}`} key="canonical" />
       </Head>
       <MainLayout>
-        <UserProfile user={user} />
+        <UserProfile user={userData as UserProfileType} />
       </MainLayout>
     </>
   );
@@ -59,7 +39,7 @@ export const UserPage = ({ userData }: { userData: userDataProp }) => {
 
 export default UserPage;
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   let parsedProfileData: userDataProp = { name: '', bio: '' };
   const profileLink = ctx?.query?.profileLink as string | undefined;
   if (!profileLink) {
@@ -78,6 +58,8 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   });
 
   parsedProfileData = {
+    ...profileData?.usersPermissionsUsers?.data?.[0]?.attributes,
+    id: profileData?.usersPermissionsUsers?.data?.[0]?.id,
     name: profileData?.usersPermissionsUsers?.data?.[0]?.attributes?.name,
     bio: profileData?.usersPermissionsUsers?.data?.[0]?.attributes?.bio,
   };
@@ -85,6 +67,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   return {
     props: {
       userData: parsedProfileData,
+      profileLink,
     },
   };
 };

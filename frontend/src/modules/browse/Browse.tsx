@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Grid, Container, LinearProgress, Typography, Pagination } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Container,
+  LinearProgress,
+  Typography,
+  Pagination,
+} from '@mui/material';
 // import { ArticleCard } from 'uiCore/components/ArticleCard/index';
 
 import { usePagination } from '../hooks/usePagination/usePagination';
@@ -47,7 +54,12 @@ function Browse({ category }: BrowseParams) {
 
     if (currentData.length > 0) {
       const articles = currentData?.map((article: ArticleEntity) => {
-        return <ArticleCard key={article?.id ? article.id : Math.random().toString()} cardData={article} />;
+        return (
+          <ArticleCard
+            key={article?.id ? article.id : Math.random().toString()}
+            cardData={article}
+          />
+        );
       });
       setArticles(articles);
     }
@@ -69,6 +81,9 @@ function Browse({ category }: BrowseParams) {
   return (
     <StyledBrowseContainer>
       <Container maxWidth="xl">
+        <Typography component="h1" display="none">
+          Greenly - Front page of the green revolution.
+        </Typography>
         <Box pb={3}>
           {currentData.length === 0 && (
             <Typography variant="h3" className={'errorText'}>
@@ -82,7 +97,9 @@ function Browse({ category }: BrowseParams) {
         <div className={'buttonHolder'}>
           <Pagination
             size="large"
-            hideNextButton={totalArticles ? totalArticles / ITEMS_PER_PAGE <= 1 : true}
+            hideNextButton={
+              totalArticles ? totalArticles / ITEMS_PER_PAGE <= 1 : true
+            }
             count={maxPage}
             page={currentPage}
             onChange={handleChange}
