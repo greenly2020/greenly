@@ -3,10 +3,9 @@ import fs from 'fs';
 import { Feed } from 'feed';
 
 export default async function generateRssFeed(allArticles: ArticleEntity[]) {
-  const site_url =
-    process.env.NODE_ENV === 'production'
-      ? 'https://www.greenly.co/'
-      : 'http://localhost:3000';
+  const site_url = process.env.BASE_URL
+    ? process.env.BASE_URL
+    : 'https://www.greenly.co/';
 
   const feedOptions = {
     title: 'Greenly articles | RSS Feed',
@@ -32,7 +31,7 @@ export default async function generateRssFeed(allArticles: ArticleEntity[]) {
       description: article.attributes?.abstract || '',
       id: `${site_url}/articles/${article.attributes?.articleLink}`,
       link: `${site_url}/articles/${article.attributes?.articleLink}`,
-      date: article.attributes?.dateCreated,
+      date: new Date(article.attributes?.dateCreated),
       author: [
         {
           link:

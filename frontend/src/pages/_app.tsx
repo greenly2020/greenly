@@ -81,7 +81,7 @@ function App({
           });
         }
       } catch (err) {
-        console.log('debug > err===', err);
+        console.log(err);
         // await logout();
       } finally {
         globalState.currentUserLoading(false);
