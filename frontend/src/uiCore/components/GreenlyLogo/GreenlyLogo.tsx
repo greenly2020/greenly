@@ -7,23 +7,23 @@ const LogoContainer = styled('div')(() => ({
   fontFamily: theme.typography.fontFamily,
   fontWeight: theme.typography.fontWeightBold,
   position: 'relative',
-  width: '200px',
+  width: '54px',
   height: '54px',
   marginTop: '7px',
   marginBottom: '7px',
 
   [theme.breakpoints.down('lg')]: {
-    width: 160,
+    width: 46,
     height: 46,
   },
 
   [theme.breakpoints.down('md')]: {
-    width: 120,
+    width: 36,
     height: 36,
   },
 
   [theme.breakpoints.down('sm')]: {
-    width: 90,
+    width: 25,
     height: 25,
   },
 }));
@@ -31,7 +31,16 @@ const LogoContainer = styled('div')(() => ({
 export const GreenlyLogo = () => {
   return (
     <LogoContainer>
-      <Image src={Logo} alt="greenly-logo" fill={true} sizes="200px" priority={true} />
+      <Image
+        src={Logo}
+        alt="greenly-logo"
+        fill={true}
+        sizes="200px"
+        priority={true}
+        style={{
+          borderRadius: '6px',
+        }}
+      />
     </LogoContainer>
   );
 };
