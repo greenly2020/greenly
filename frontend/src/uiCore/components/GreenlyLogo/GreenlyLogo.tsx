@@ -18,7 +18,7 @@ const LogoContainer = styled('div')(() => ({
   },
 
   [theme.breakpoints.down('md')]: {
-    width: 120,
+    width: 80,
     height: 36,
   },
 }));
