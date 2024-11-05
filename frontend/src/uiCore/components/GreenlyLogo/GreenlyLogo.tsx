@@ -8,18 +8,16 @@ const LogoContainer = styled('div')(() => ({
   fontWeight: theme.typography.fontWeightBold,
   position: 'relative',
   width: '338px',
-  height: '54px',
+  aspectRatio: '338 / 100',
   marginTop: '7px',
   marginBottom: '7px',
 
   [theme.breakpoints.down('lg')]: {
     width: 200,
-    height: 46,
   },
 
   [theme.breakpoints.down('md')]: {
     width: 80,
-    height: 36,
   },
 }));
 
@@ -29,10 +27,11 @@ export const GreenlyLogo = () => {
       <Image
         src={Logo}
         alt="greenly-logo"
-        fill={true}
-        priority={true}
+        fill
+        priority
         style={{
           borderRadius: '6px',
+          objectFit: 'contain',
         }}
       />
     </LogoContainer>
