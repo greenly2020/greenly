@@ -24,7 +24,7 @@ export const UserPage = ({
   return (
     <>
       <Head>
-        <title>{userData?.name || 'Greenly'}</title>
+        <title>{userData?.name || 'Green Place'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={userData?.bio || ''} />
         <link rel="icon" href="/favicon.ico" />

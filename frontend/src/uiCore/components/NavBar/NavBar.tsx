@@ -186,7 +186,7 @@ export const NavBar = () => {
 
             <Box className={'rightContainer'} gap="12px">
               <TextField
-                label="Search Greenly"
+                label="Search Green Place"
                 id="outlined-size-small"
                 value={term}
                 onChange={handleTermChange}

@@ -4,16 +4,16 @@ import { theme } from "@/styles/theme";
 
 const list = [
   {
-    title: "How Can an Editor Contribute?",
-    subTitle: "There are plenty of ways you can get involved. ",
-    body: `As a Greenly Editor you will help us welcome new members to the Greenly community. You will encourage like-minded environmental enthusiasts to get involved with Greenly through our Discord, by discussing and supporting environmental activism, and by strengthening the conversations taking place on the site.
+    title: 'How Can an Editor Contribute?',
+    subTitle: 'There are plenty of ways you can get involved. ',
+    body: `As a Green Place Editor you will help us welcome new members to the Green Place community. You will encourage like-minded environmental enthusiasts to get involved with Green Place through our Discord, by discussing and supporting environmental activism, and by strengthening the conversations taking place on the site.
 
-    You will decide which submitted articles are worthy of a spot on the Greenly website and ensure that articles published on Greenly are well written with clear points and concise arguments. 
+    You will decide which submitted articles are worthy of a spot on the Green Place website and ensure that articles published on Green Place are well written with clear points and concise arguments. 
     
-    You will be responsible for spreading the word about Greenly’s mission and work to your community. Through attending summits, hosting mixers and posting informational flyers, you will help steer the community towards utilizing Greenly as a resource to foster discussion around the environment. Taking cues from the Sunrise Movement, we intend to be a grassroots organization that thrives online but lives within our community at large.`,
+    You will be responsible for spreading the word about Green Place’s mission and work to your community. Through attending summits, hosting mixers and posting informational flyers, you will help steer the community towards utilizing Green Place as a resource to foster discussion around the environment. Taking cues from the Sunrise Movement, we intend to be a grassroots organization that thrives online but lives within our community at large.`,
   },
   {
-    title: "Prerequisites",
+    title: 'Prerequisites',
     body: `Editors should have a strong understanding of environmental issues.
 
     Editors should have knowledge of the English language and modern English grammar.
@@ -21,12 +21,12 @@ const list = [
     Editors should have published at least 3 articles.`,
   },
   {
-    title: "What’s in It for Me?",
-    body: `However small, your contribution as a Greenly writer and an editor will help protect the environment. The larger our community, the further our activism reaches.
+    title: 'What’s in It for Me?',
+    body: `However small, your contribution as a Green Place writer and an editor will help protect the environment. The larger our community, the further our activism reaches.
 
-    You get to be a representative of Greenly’s voice at national and local events.
+    You get to be a representative of Green Place’s voice at national and local events.
     
-    Each Editor will receive a complimentary eco-friendly Greenly t-shirt.`,
+    Each Editor will receive a complimentary eco-friendly Green Place t-shirt.`,
   },
 ];
 
