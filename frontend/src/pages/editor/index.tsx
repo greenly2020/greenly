@@ -7,14 +7,14 @@ const Editor = () => {
   return (
     <>
       <Head>
-        <title>Greenly Editors</title>
+        <title>Green Place Editors</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Greenly Editors" />
+        <meta name="description" content="Green Place Editors" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
-          <GreenlyEditorsIntroduction />
-          <GreenlyEditorsList />
+        <GreenlyEditorsIntroduction />
+        <GreenlyEditorsList />
       </MainLayout>
     </>
   );
