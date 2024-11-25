@@ -27,16 +27,19 @@ const Introduction = () => {
         <Grid container justifyContent="center">
           <Grid item xs={12}>
             <Typography variant="h1" className={'headerText'} align="center">
-              Greenly is the front page of the Green Revolution.
+              Green Place is the front page of the Green Revolution.
             </Typography>
           </Grid>
           <Grid item xs={12} md={8}>
             <Typography variant="h5" className={'bodyText'} align="center">
-              Greenly is a selective online environmental publication that provides a forum for readers, writers,
-              experts, students, and everyone in-between to discuss the topics at the forefront of our collective
-              concerns. As a writer, you’ll be able to use Greenly to share your knowledge with readers around the
-              world. Your article will be reviewed and edited by real environmentalists. So submit an article to join
-              the conversation and help shape the future of our planet.
+              Green Place is a selective online environmental publication that
+              provides a forum for readers, writers, experts, students, and
+              everyone in-between to discuss the topics at the forefront of our
+              collective concerns. As a writer, you’ll be able to use Green
+              Place to share your knowledge with readers around the world. Your
+              article will be reviewed and edited by real environmentalists. So
+              submit an article to join the conversation and help shape the
+              future of our planet.
             </Typography>
           </Grid>
         </Grid>
