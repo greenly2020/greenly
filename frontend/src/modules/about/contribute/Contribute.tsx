@@ -37,10 +37,16 @@ export const Contribute = () => {
           <Grid item xs={12} md={8}>
             <Typography variant="h5" className={'bodyText'} align="center">
               Check out our{' '}
-              <Link href="/write-for-us" style={{ textDecoration: 'underline', color: theme.palette.green.primary }}>
+              <Link
+                href="/write-for-us"
+                style={{
+                  textDecoration: 'underline',
+                  color: theme.palette.green.primary,
+                }}
+              >
                 writing guidelines
               </Link>{' '}
-              and publish your work on Greenly
+              and publish your work on Green Place
             </Typography>
           </Grid>
         </Grid>

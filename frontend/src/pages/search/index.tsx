@@ -12,8 +12,9 @@ export const SearchPage = () => {
   return (
     <>
       <Head>
-        <title>Search on Greenly</title> <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Search on Greenly" />
+        <title>Search on Green Place</title>{' '}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Search on Green Place" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout mailForm={false}>

@@ -8,8 +8,8 @@ export default async function generateRssFeed(allArticles: ArticleEntity[]) {
     : 'https://www.greenly.co/';
 
   const feedOptions = {
-    title: 'Greenly articles | RSS Feed',
-    description: 'Welcome to Greenly!',
+    title: 'Green Place articles | RSS Feed',
+    description: 'Welcome to Green Place!',
     id: site_url,
     site_url: site_url,
     feed_url: `${site_url}/rss.xml`,

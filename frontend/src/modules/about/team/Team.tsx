@@ -84,10 +84,13 @@ export const Team = (props: ITeamProps) => {
             </Grid>
             <Grid>
               <Typography variant="h5" className={'bodyText'} align="center">
-                Greenly was started by a group of Wesleyan University alumni in 2020. Concerned about the direction the
-                climate change conversation was heading in, we realized there wasn’t a singular platform where people
-                could discuss the future of our planet. We decided to change that. What started out as a group of four
-                passionate friends we hope will one day expand to millions of people across the globe.
+                Green Place was started by a group of Wesleyan University alumni
+                in 2020. Concerned about the direction the climate change
+                conversation was heading in, we realized there wasn’t a singular
+                platform where people could discuss the future of our planet. We
+                decided to change that. What started out as a group of four
+                passionate friends we hope will one day expand to millions of
+                people across the globe.
               </Typography>
             </Grid>
             <Grid container className={'members'} spacing={5}>

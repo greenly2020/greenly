@@ -78,7 +78,7 @@ export default function Articles() {
     <StyledArticlesContainer>
       <Container maxWidth="xl">
         <Typography component="h1" display="none">
-          Greenly - Front page of the green revolution.
+          Green Place - Front page of the green revolution.
         </Typography>
         <Box pb={3}>
           {articles?.length === 0 && (

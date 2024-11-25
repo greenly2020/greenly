@@ -15,7 +15,7 @@ export default function Auth() {
   return (
     <>
       <Head>
-        <title>Greenly</title>
+        <title>Green Place</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

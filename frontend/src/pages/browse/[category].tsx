@@ -18,7 +18,7 @@ export const BrowseCategoryPage = () => {
   return activeCategory ? (
     <>
       <Head>
-        <title>{activeCategory?.label || 'Greenly'}</title>
+        <title>{activeCategory?.label || 'Green Place'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={activeCategory?.description} />
         <link rel="icon" href="/favicon.ico" />

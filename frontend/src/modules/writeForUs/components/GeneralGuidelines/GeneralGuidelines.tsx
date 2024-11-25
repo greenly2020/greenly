@@ -30,7 +30,7 @@ const GUIDELINES: IGuideline[][] = [
   [
     {
       title: 'Leave Out Promotional Content',
-      body: 'Greenly is a platform to educate audiences about climate topics. Undoubtedly it is worthwhile to share your own projects and companies with readers. However we will not allow un-sponsored articles to promote businesses and will remove promotional content from your article.',
+      body: 'Green Place is a platform to educate audiences about climate topics. Undoubtedly it is worthwhile to share your own projects and companies with readers. However we will not allow un-sponsored articles to promote businesses and will remove promotional content from your article.',
     },
     {
       title: 'Post Your Article on Social Media',
@@ -54,7 +54,7 @@ const GUIDELINES: IGuideline[][] = [
     },
     {
       title: 'Create a Bio for Your Profile',
-      body: 'Readers love to know more about the writers they’re interacting with! Consider making a bio on your profile and adding your social media tags so readers have the chance to learn more about who you are and where you come from. Don’t just be a writer; be a member of the Greenly community.',
+      body: 'Readers love to know more about the writers they’re interacting with! Consider making a bio on your profile and adding your social media tags so readers have the chance to learn more about who you are and where you come from. Don’t just be a writer; be a member of the Green Place community.',
     },
   ],
   [
@@ -97,14 +97,14 @@ const GeneralGuidelines = () => {
           <Grid container justifyContent="center">
             <Grid item xs={12} md={8}>
               <Typography variant="h1" className={'headerText'} align="center">
-                General Guidelines for Greenly Stories
+                General Guidelines for Green Place Stories
               </Typography>
             </Grid>
           </Grid>
         </Box>
       </StyledGuidelinesContainer>
       {GUIDELINES.map((items, index) => {
-        return items.map(guideline => {
+        return items.map((guideline) => {
           return (
             <GeneralGuidelineItem
               key={guideline.title}

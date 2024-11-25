@@ -52,7 +52,7 @@ export const ArticlePage = ({ articleData, articleLink }: any) => {
   return (
     <>
       <Head>
-        <title>{articleData?.title || 'Greenly'}</title>
+        <title>{articleData?.title || 'Green Place'}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={articleData?.abstract || ''} />
         <link rel="icon" href="/favicon.ico" />

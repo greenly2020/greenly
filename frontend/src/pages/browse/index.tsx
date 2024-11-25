@@ -8,7 +8,7 @@ export const BrowsePage = () => {
   return (
     <>
       <Head>
-        <title>Greenly</title>
+        <title>Green Place</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Front page of the green revolution" />
         <link rel="icon" href="/favicon.ico" />

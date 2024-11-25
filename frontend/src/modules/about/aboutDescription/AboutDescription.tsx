@@ -36,10 +36,12 @@ export const AboutDescription = (props: IAboutDescriptionProps) => {
           </Grid>
           <Grid item xs={12} md={8}>
             <Typography variant="h5" className={'bodyText'} align="center">
-              Greenly is designed for environmentalists and climate change activists to come together and discuss the
-              future of our planet. Whether you’re here to read, write, or join in on the conversation, all are welcome.
-              Greenly is a place where great minds of the present can chat with the budding young leaders of the future.
-              Come join the Green Revolution.
+              Green Place is designed for environmentalists and climate change
+              activists to come together and discuss the future of our planet.
+              Whether you’re here to read, write, or join in on the
+              conversation, all are welcome. Green Place is a place where great
+              minds of the present can chat with the budding young leaders of
+              the future. Come join the Green Revolution.
             </Typography>
           </Grid>
         </Grid>

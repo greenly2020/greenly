@@ -68,7 +68,7 @@ export const loginResolver = async (parent, args: Args, context) => {
         data: {
           blocked: false,
           role: basicRole.id,
-          bio: 'Greenly User',
+          bio: 'Green Place User',
           extId: decodedToken.uid,
           email,
           username: decodedToken.uid,
