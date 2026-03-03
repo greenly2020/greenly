@@ -1,46 +1,110 @@
-import React from "react";
-import { Box, Typography } from "@mui/material";
+import React, { forwardRef } from "react";
+import MailchimpSubscribe, { EmailFormFields } from "react-mailchimp-subscribe";
+import { Box, useMediaQuery } from "@mui/material";
+import { theme } from "@/styles/theme";
+
+import { StyledMailFormInput } from "./StyledMailForm";
+import { Button } from "../Button";
 
 export interface IMailFormProps {
-    variant?: "primary" | "secondary";
+    variant: "primary" | "secondary";
 }
 
-export const MailForm = React.forwardRef<HTMLElement, IMailFormProps>(
+const url =
+    "https://greenly.us1.list-manage.com/subscribe/post?u=5fd908e5506fc0c7c6f52b8b4&id=6c25891393";
+
+export interface FormProps {
+    status: string | null;
+    // should probably not be any
+    message: any;
+    onValidated: any;
+}
+
+export const MailForm = forwardRef<HTMLElement, IMailFormProps>(
     (props, ref) => {
+        const smScreen = useMediaQuery(`(max-width:${theme.breakpoints.values.sm}px)`);
+
+        const CustomForm = ({ status, message, onValidated }: FormProps) => {
+            let email: HTMLInputElement | null;
+            const submit = () =>
+                email &&
+                email.value.indexOf("@") > -1 &&
+                onValidated({
+                    EMAIL: email.value,
+                });
+
+            return (
+                <Box
+                    display='flex'
+                    alignItems='center'
+                    justifyContent='center'
+                >
+                    <Box
+                        flexGrow={1}
+                        margin='auto'
+                    >
+                        {status === "sending" && (
+                            <div style={{ color: "blue" }}>sending...</div>
+                        )}
+                        {status === "error" && (
+                            <div
+                                style={{ color: "red" }}
+                                dangerouslySetInnerHTML={{ __html: message }}
+                            />
+                        )}
+                        {status === "success" && (
+                            <div
+                                style={{ color: "green" }}
+                                dangerouslySetInnerHTML={{ __html: message }}
+                            />
+                        )}
+                        <StyledMailFormInput
+                            ref={(node) => (email = node)}
+                            type="email"
+                            placeholder="Enter your email for our monthly digest"
+                        />
+                    </Box>
+                    <Box
+                        ml='-5px'
+                        maxWidth={smScreen ? 70 : 120}
+                    >
+                        <Button
+                            onClick={submit}
+                            variant="primary"
+                            label="Submit"
+                            component="button"
+                            sx={{
+                                margin: 0,
+                                width: '100%'
+                            }}
+                        >
+                            Submit
+                        </Button>
+                    </Box>
+                </Box>
+            );
+        };
+
         return (
             <Box
-                sx={{
-                    width: "100%",
-                    maxWidth: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                }}
+                fontFamily={theme.typography.fontFamily}
+                fontWeight={theme.typography.fontWeightBold}
+                maxWidth={600}
+                margin='auto'
             >
-                <Typography variant="h6" sx={{ mb: 2 }}>
-                    Enter your email for our monthly digest
-                </Typography>
-                <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
-                <iframe
-                    src="https://subscribe-forms.beehiiv.com/889aa328-9f35-4546-ae95-6457bb5765b5"
-                    className="beehiiv-embed"
-                    data-test-id="beehiiv-embed"
-                    frameBorder={0}
-                    scrolling="no"
-                    style={{
-                        width: "456px",
-                        height: "291px",
-                        margin: 0,
-                        borderRadius: "0px",
-                        backgroundColor: "transparent",
-                        boxShadow: "none",
-                        maxWidth: "100%",
-                    }}
+                <MailchimpSubscribe
+                    url={url}
+                    render={({ subscribe, status, message }) => (
+                        <CustomForm
+                            status={status}
+                            message={message}
+                            onValidated={(formData: EmailFormFields) => subscribe(formData)}
+                        />
+                    )}
                 />
             </Box>
         );
     }
 );
 
-MailForm.displayName = "MailForm";
+MailForm.displayName = 'MailForm';
