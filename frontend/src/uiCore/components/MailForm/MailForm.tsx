@@ -33,9 +33,9 @@ export const MailForm = React.forwardRef<HTMLElement, IMailFormProps>(
                                                     maxWidth: "100%",
                                       }}
                                     />
-                  </Box>Box>
+                  </Box>Shou
                 );
-    }
+    }I 
   );
 
 MailForm.displayName = "MailForm";</Box>
