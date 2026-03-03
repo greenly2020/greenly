@@ -25,13 +25,13 @@ export const ArticleCard = ({ cardData }: { cardData: ArticleEntity }) => {
     return null;
   }
 
-  const cdnUrl =
-    cardData?.attributes?.headerImage &&
-    cardData?.attributes?.headerImage.includes('appspot.com')
-      ? getCDNUrl(cardData?.attributes?.headerImage, 400, 225)
-      : cardData?.attributes?.headerImage
-      ? cardData?.attributes?.headerImage
-      : 'https://picsum.photos/id/11/400/225';
+ const rawImage = cardData?.attributes?.headerImage;
+
+const cdnUrl = rawImage && rawImage.startsWith('http')
+  ? rawImage.includes('appspot.com')
+    ? getCDNUrl(rawImage, 400, 225)
+    : rawImage
+  : 'https://picsum.photos/id/11/400/225';
 
   const profileLink = formatProfileLink(
     cardData?.attributes?.author?.data?.attributes?.profileLink || ''
