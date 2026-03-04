@@ -1,7 +1,6 @@
 import { forwardRef } from 'react';
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
-
-import { MailForm } from '../MailForm';
+import { BeehiivForm } from '../BeehiivForm';
 import { theme } from '@/styles/theme';
 
 export interface IMailFormFooterProps {
@@ -10,7 +9,6 @@ export interface IMailFormFooterProps {
 
 export const MailFormFooter = forwardRef<HTMLElement, IMailFormFooterProps>((props, _) => {
   const mdScreen = useMediaQuery(`(min-width:${theme.breakpoints.values.md}px)`);
-
   return (
     <Box
       display="flex"
@@ -39,7 +37,7 @@ export const MailFormFooter = forwardRef<HTMLElement, IMailFormFooterProps>((pro
         </Grid>
         <Grid item xs={12} md={9}>
           <Box ml="auto">
-            <MailForm variant="primary" />
+            <BeehiivForm />
           </Box>
         </Grid>
       </Grid>
