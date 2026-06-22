@@ -32,7 +32,7 @@ const OvershootBanner = () => {
           color: '#ffffff',
         }}
       >
-        🎮 <strong>Overshoot</strong> — Can you save the planet before it's too late?
+    🎮 <strong>Overshoot</strong> — Can you save the planet before it&apos;s too late?
       </Typography>
       <Typography
         sx={{
