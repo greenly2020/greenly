@@ -1,3 +1,4 @@
+import { OvershootBanner } from '@/uiCore/components/OvershootBanner/OvershootBanner';
 import { useReactiveVar } from '@apollo/client';
 import { globalState } from '@/config/globalState';
 import { Footer } from '@/uiCore/components/Footer';
@@ -18,7 +19,8 @@ export const MainLayout = ({ children, navBar = true, categoryBar = true, mailFo
   return (
     <>
       {navBar && <NavBar />}
-      {categoryBar && <CategoryBar />}
+<OvershootBanner />
+{categoryBar && <CategoryBar />}
       {<main className="content">{!currentUserLoading && children}</main>}
       {mailForm && <MailFormFooter />}
       <Footer />
