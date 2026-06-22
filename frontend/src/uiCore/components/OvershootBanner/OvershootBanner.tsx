@@ -1,14 +1,12 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
 
 const OvershootBanner = () => {
   return (
-    <Box
-      component="a"
+    
       href="https://overshootgreenplace.earth"
       target="_blank"
       rel="noopener noreferrer"
-      sx={{
+      style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -18,33 +16,17 @@ const OvershootBanner = () => {
         padding: '10px 16px',
         textDecoration: 'none',
         width: '100%',
-        cursor: 'pointer',
-        '&:hover': {
-          backgroundColor: '#2d6a4f',
-        },
-        transition: 'background-color 0.2s ease',
+        boxSizing: 'border-box',
+        fontFamily: 'inherit',
       }}
     >
-      <Typography
-        sx={{
-          fontSize: { xs: '13px', sm: '15px' },
-          fontWeight: 500,
-          color: '#ffffff',
-        }}
-      >
-    🎮 <strong>Overshoot</strong> — Can you save the planet before it&apos;s too late?
-      </Typography>
-      <Typography
-        sx={{
-          fontSize: { xs: '13px', sm: '15px' },
-          fontWeight: 700,
-          color: '#90ee90',
-          whiteSpace: 'nowrap',
-        }}
-      >
+      <span style={{ fontSize: '15px', fontWeight: 500 }}>
+        🎮 <strong>Overshoot</strong> — Can you save the planet before it&apos;s too late?
+      </span>
+      <span style={{ fontSize: '15px', fontWeight: 700, color: '#90ee90', whiteSpace: 'nowrap' }}>
         Play now →
-      </Typography>
-    </Box>
+      </span>
+    </a>
   );
 };
 
