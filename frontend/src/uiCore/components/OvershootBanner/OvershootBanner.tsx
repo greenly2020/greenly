@@ -2,7 +2,7 @@ import React from 'react';
 
 const OvershootBanner = () => {
   return (
-    
+    <a
       href="https://overshootgreenplace.earth"
       target="_blank"
       rel="noopener noreferrer"
