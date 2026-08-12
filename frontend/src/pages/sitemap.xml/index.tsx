@@ -11,38 +11,26 @@ const staticURL = [
   {
     loc: `${process.env.BASE_URL}`,
     lastmod: new Date().toISOString(),
-    // changefreq
-    // priority
   },
   {
     loc: `${process.env.BASE_URL}/about`,
     lastmod: new Date().toISOString(),
-    // changefreq
-    // priority
   },
   {
     loc: `${process.env.BASE_URL}/browse`,
     lastmod: new Date().toISOString(),
-    // changefreq
-    // priority
   },
   {
     loc: `${process.env.BASE_URL}/editor`,
     lastmod: new Date().toISOString(),
-    // changefreq
-    // priority
   },
   {
     loc: `${process.env.BASE_URL}/help`,
     lastmod: new Date().toISOString(),
-    // changefreq
-    // priority
   },
   {
     loc: `${process.env.BASE_URL}/write-for-us`,
     lastmod: new Date().toISOString(),
-    // changefreq
-    // priority
   },
 ];
 
@@ -50,8 +38,6 @@ const browseURL = CATEGORIES?.map(({ value }: { value: string }) => {
   return {
     loc: `${process.env.BASE_URL}/browse/${value}`,
     lastmod: new Date().toISOString(),
-    // changefreq
-    // priority
   };
 });
 
@@ -86,8 +72,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     },
   });
 
-  const authorsURL = authorsData?.usersPermissionsUsers?.data?.map(
-    ({ attributes }: { attributes: UsersPermissionsUser }) => {
+  const authorsURL = authorsData?.usersPermissionsUsers?.data
+    ?.map(({ attributes }: { attributes: UsersPermissionsUser }) => {
       let profileLink;
       const regex = /^[a-zA-Z0-9\-_]+$/;
       if (attributes?.profileLink && regex.test(attributes?.profileLink)) {
@@ -97,14 +83,18 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
         return {
           loc: profileLink,
           lastmod: new Date().toISOString(),
-          // changefreq
-          // priority
         };
       }
-    }
-  );
+      return undefined;
+    })
+    .filter((entry): entry is { loc: string; lastmod: string } => Boolean(entry));
 
-  const fields = [...staticURL, ...browseURL, ...articlesURL, ...authorsURL];
+  const fields = [
+    ...staticURL,
+    ...(browseURL || []),
+    ...(articlesURL || []),
+    ...(authorsURL || []),
+  ];
   return getServerSideSitemapLegacy(ctx, fields);
 };
 
