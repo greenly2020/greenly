@@ -39,7 +39,7 @@ export const ContactFooter = (props: IContactFooterProps) => {
             <Typography variant="h5" className={'bodyText'} align="center">
               Send an email to{' '}
               <Link
-                href="mailto:ted@greenly.co"
+                href="mailto:ted@greenplace.earth"
                 color="inherit"
                 target="_blank"
                 style={{ color: theme.palette.green.primary }}
