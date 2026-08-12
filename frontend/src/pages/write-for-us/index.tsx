@@ -1,17 +1,16 @@
 import { MainLayout } from '@/layout/MainLayout';
 import GeneralGuidelines from '@/modules/writeForUs/components/GeneralGuidelines/GeneralGuidelines';
 import Introduction from '@/modules/writeForUs/components/Introduction/Introduction';
-import Head from 'next/head';
+import { Seo } from '@/uiCore/components/Seo';
 
 const WriteForUs = () => {
   return (
     <>
-      <Head>
-        <title>Write for us</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Write for us" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo
+        title="Write for Us"
+        description="Contribute climate and sustainability reporting to Green Place — guidelines for writers and contributors."
+        path="/write-for-us"
+      />
       <MainLayout>
         <>
           <Introduction />

@@ -1,17 +1,15 @@
-import Head from "next/head";
-
 import { MainLayout } from "@/layout/MainLayout";
 import { GreenlyEditorsIntroduction, GreenlyEditorsList } from "@/modules/greenlyEditors";
+import { Seo } from "@/uiCore/components/Seo";
 
 const Editor = () => {
   return (
     <>
-      <Head>
-        <title>Green Place Editors</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Green Place Editors" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo
+        title="Our Editors"
+        description="Meet the editorial team behind Green Place's climate and sustainability reporting."
+        path="/editor"
+      />
       <MainLayout>
         <GreenlyEditorsIntroduction />
         <GreenlyEditorsList />

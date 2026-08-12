@@ -9,6 +9,7 @@ import {
   StyledTwitterIcon,
 } from './StyledFooter';
 import Link from 'next/link';
+import { SOCIAL_LINKS } from '@/config/socialLinks';
 
 export interface IFooterProps {
   variant?: 'primary' | 'secondary';
@@ -21,37 +22,45 @@ export const Footer = forwardRef<HTMLElement, IFooterProps>((props, _) => {
         <Box pt={5} pb={6}>
           <Box>
             <Grid container justifyContent="center">
-              <Grid item>
-                <LinkMui href="https://www.facebook.com/webelieveingreen" target="_blank">
-                  <StyledCircleDiv>
-                    <StyledFacebookIcon />
-                  </StyledCircleDiv>
-                </LinkMui>
-              </Grid>
+              {SOCIAL_LINKS.facebook && (
+                <Grid item>
+                  <LinkMui href={SOCIAL_LINKS.facebook} target="_blank">
+                    <StyledCircleDiv>
+                      <StyledFacebookIcon />
+                    </StyledCircleDiv>
+                  </LinkMui>
+                </Grid>
+              )}
 
-              <Grid item>
-                <LinkMui href="https://twitter.com/greenly_co" target="_blank">
-                  <StyledCircleDiv>
-                    <StyledTwitterIcon />
-                  </StyledCircleDiv>
-                </LinkMui>
-              </Grid>
+              {SOCIAL_LINKS.twitter && (
+                <Grid item>
+                  <LinkMui href={SOCIAL_LINKS.twitter} target="_blank">
+                    <StyledCircleDiv>
+                      <StyledTwitterIcon />
+                    </StyledCircleDiv>
+                  </LinkMui>
+                </Grid>
+              )}
 
-              <Grid item>
-                <LinkMui href="https://www.linkedin.com/company/greenlyco/" target="_blank">
-                  <StyledCircleDiv>
-                    <StyledLinkedInIcon />
-                  </StyledCircleDiv>
-                </LinkMui>
-              </Grid>
+              {SOCIAL_LINKS.linkedin && (
+                <Grid item>
+                  <LinkMui href={SOCIAL_LINKS.linkedin} target="_blank">
+                    <StyledCircleDiv>
+                      <StyledLinkedInIcon />
+                    </StyledCircleDiv>
+                  </LinkMui>
+                </Grid>
+              )}
 
-              <Grid item>
-                <LinkMui href="https://www.instagram.com/greenly_co/" target="_blank">
-                  <StyledCircleDiv>
-                    <StyledInstagramIcon />
-                  </StyledCircleDiv>
-                </LinkMui>
-              </Grid>
+              {SOCIAL_LINKS.instagram && (
+                <Grid item>
+                  <LinkMui href={SOCIAL_LINKS.instagram} target="_blank">
+                    <StyledCircleDiv>
+                      <StyledInstagramIcon />
+                    </StyledCircleDiv>
+                  </LinkMui>
+                </Grid>
+              )}
             </Grid>
 
             <Grid container justifyContent="center">

@@ -1,9 +1,9 @@
-import Head from 'next/head';
 import { useMe } from '@/modules/hooks/useMe';
 import { Login } from '@/modules/firebase/components/Login';
 
 import { MainLayout } from '@/layout/MainLayout';
 import { useRouter } from 'next/router';
+import { Seo } from '@/uiCore/components/Seo';
 
 export default function Auth() {
   const { me } = useMe();
@@ -14,11 +14,12 @@ export default function Auth() {
 
   return (
     <>
-      <Head>
-        <title>Green Place</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo
+        title="Log In"
+        description="Log in to Green Place."
+        path="/auth"
+        noindex
+      />
       <MainLayout>
         <Login />
       </MainLayout>

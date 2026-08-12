@@ -2,27 +2,32 @@ export const CATEGORIES = [
   {
     value: 'environment',
     label: 'Environment',
-    description: 'Environment'
+    description:
+      'Climate science, ecosystems, and environmental policy — reporting on the trends shaping the planet, from Green Place.',
   },
   {
     value: 'technology',
     label: 'Technology',
-    description: 'Technology'
+    description:
+      'Clean tech, climate data tools, and the innovations driving the green transition, covered by Green Place.',
   },
   {
     value: 'economy',
     label: 'Economy',
-    description: 'Economy'
+    description:
+      'Climate finance, carbon markets, and the economics of the green revolution, analyzed by Green Place.',
   },
   {
     value: 'society',
     label: 'Society',
-    description: 'Society'
+    description:
+      'How climate change and sustainability are reshaping communities, policy, and daily life — from Green Place.',
   },
   {
     value: 'energy',
     label: 'Energy',
-    description: 'Energy'
+    description:
+      'Grid data, renewable energy trends, and the infrastructure of the energy transition, reported by Green Place.',
   },
 ];
 

@@ -100,7 +100,9 @@ function App({
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Component {...pageProps} />
-          <GoogleAnalytics gaId="G-XYZ" />
+          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+          )}
         </ThemeProvider>
       </ApolloProvider>
     </CacheProvider>

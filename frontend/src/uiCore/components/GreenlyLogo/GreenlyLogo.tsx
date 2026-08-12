@@ -26,7 +26,7 @@ export const GreenlyLogo = () => {
     <LogoContainer>
       <Image
         src={Logo}
-        alt="greenly-logo"
+        alt="Green Place logo"
         fill
         priority
         style={{
