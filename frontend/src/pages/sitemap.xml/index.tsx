@@ -87,7 +87,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       }
       return undefined;
     })
-    .filter((entry): entry is { loc: string; lastmod: string } => Boolean(entry));
+    .filter((entry: { loc: string; lastmod: string } | undefined) => Boolean(entry)) as
+    | { loc: string; lastmod: string }[]
+    | undefined;
 
   const fields = [
     ...staticURL,
