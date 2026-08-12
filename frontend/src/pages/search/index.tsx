@@ -1,7 +1,8 @@
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Search } from '@/modules/browse';
 import { MainLayout } from '@/layout/MainLayout';
+import { Seo } from '@/uiCore/components/Seo';
+
 export const SearchPage = () => {
   const { push, query, isReady } = useRouter();
   const term = query.term as string;
@@ -11,12 +12,12 @@ export const SearchPage = () => {
   }
   return (
     <>
-      <Head>
-        <title>Search on Green Place</title>{' '}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Search on Green Place" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo
+        title={term ? `Search: ${term}` : 'Search'}
+        description="Search Green Place articles."
+        path={`/search${term ? `?term=${encodeURIComponent(term)}` : ''}`}
+        noindex
+      />
       <MainLayout mailForm={false}>
         <Search term={term} />
       </MainLayout>

@@ -14,6 +14,9 @@ const nextConfig = {
     NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
     NEXT_PUBLIC_FIREBASE_APP_ID: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+    // GA4 Measurement ID (G-XXXXXXX) for the @next/third-parties GoogleAnalytics component in _app.tsx.
+    // Was previously hardcoded as the placeholder "G-XYZ" and never actually set — GA has not been collecting real data.
+    NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
   },
   images: {
     remotePatterns: [

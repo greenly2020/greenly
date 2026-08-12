@@ -21,6 +21,12 @@ const staticURL = [
     // priority
   },
   {
+    loc: `${process.env.BASE_URL}/browse`,
+    lastmod: new Date().toISOString(),
+    // changefreq
+    // priority
+  },
+  {
     loc: `${process.env.BASE_URL}/editor`,
     lastmod: new Date().toISOString(),
     // changefreq

@@ -1,19 +1,16 @@
-import Head from 'next/head';
-
 import { MainLayout } from '@/layout/MainLayout';
 import { Articles } from '@/modules/articles';
 import TopArticles from '@/modules/articles/TopArticles';
+import { Seo } from '@/uiCore/components/Seo';
 
 export const ArticlesPage = () => {
   return (
     <>
-      <Head>
-        <title>Green Place</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Front page of the green revolution" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href={`/`} key="canonical" />
-      </Head>
+      <Seo
+        title="Green Place — Climate & Sustainability News, Data, and Analysis"
+        description="Green Place is the front page of the green revolution: data-driven climate, energy, and sustainability journalism covering environment, technology, economy, and society."
+        path="/"
+      />
       <MainLayout>
         <>
           <Articles />

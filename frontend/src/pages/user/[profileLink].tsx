@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Container, LinearProgress, Typography } from '@mui/material';
 
@@ -8,6 +7,7 @@ import { UserProfileType, useProfile } from '@/modules/hooks/useProfile';
 import { GetServerSideProps } from 'next';
 import { apolloClientServer } from '@/api/apolloClientServer';
 import { GetUsersDocument } from '@/modules/user/graphql/query/__generated__/getUsers';
+import { Seo } from '@/uiCore/components/Seo';
 
 interface userDataProp {
   name?: string;
@@ -23,13 +23,15 @@ export const UserPage = ({
 }) => {
   return (
     <>
-      <Head>
-        <title>{userData?.name || 'Green Place'}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={userData?.bio || ''} />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href={`/user/${profileLink}`} key="canonical" />
-      </Head>
+      <Seo
+        title={userData?.name ? `${userData.name} — Author` : 'Author'}
+        description={
+          userData?.bio ||
+          `Articles by ${userData?.name || 'this author'} on Green Place.`
+        }
+        path={`/user/${profileLink}`}
+        ogType="profile"
+      />
       <MainLayout>
         <UserProfile user={userData as UserProfileType} />
       </MainLayout>
