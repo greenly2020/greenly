@@ -16,7 +16,7 @@ export default function Auth() {
     <>
       <Seo
         title="Log In"
-        description="Log in to Green Place."
+        description="Log in to the Green Place."
         path="/auth"
         noindex
       />
