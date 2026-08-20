@@ -7,7 +7,7 @@ const Editor = () => {
     <>
       <Seo
         title="Our Editors"
-        description="Meet the editorial team behind Green Place's climate and sustainability reporting."
+        description="Meet the editorial team behind the Green Place's climate and sustainability reporting."
         path="/editor"
       />
       <MainLayout>
