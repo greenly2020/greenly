@@ -12,7 +12,7 @@ function About() {
     <>
       <Seo
         title="About Us"
-        description="Green Place is the front page of the green revolution — learn about our mission, our editorial team, and how to contribute climate and sustainability reporting."
+        description="The Green Place is the front page of the green revolution — learn about our mission, our editorial team, and how to contribute climate and sustainability reporting."
         path="/about"
       />
       <MainLayout>
