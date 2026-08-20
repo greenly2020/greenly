@@ -7,8 +7,8 @@ export const ArticlesPage = () => {
   return (
     <>
       <Seo
-        title="Green Place — Climate & Sustainability News, Data, and Analysis"
-        description="Green Place is the front page of the green revolution: data-driven climate, energy, and sustainability journalism covering environment, technology, economy, and society."
+        title=" The Green Place — Climate & Sustainability News, Data, and Analysis"
+        description="The Green Place is the front page of the green revolution: data-driven climate, energy, and sustainability journalism covering environment, technology, economy, and society."
         path="/"
       />
       <MainLayout>
