@@ -8,7 +8,7 @@ const WriteForUs = () => {
     <>
       <Seo
         title="Write for Us"
-        description="Contribute climate and sustainability reporting to Green Place — guidelines for writers and contributors."
+        description="Contribute climate and sustainability reporting to the Green Place — guidelines for writers and contributors."
         path="/write-for-us"
       />
       <MainLayout>
