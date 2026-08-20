@@ -6,8 +6,8 @@ export default function HelpPage() {
   return (
     <>
       <Seo
-        title="How to Use Green Place"
-        description="A quick guide to getting the most out of Green Place — reading, saving, and contributing articles."
+        title="How to Use the Green Place"
+        description="A quick guide to getting the most out of the Green Place — reading, saving, and contributing articles."
         path="/help"
       />
       <MainLayout>
